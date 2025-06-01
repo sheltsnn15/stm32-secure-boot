@@ -39,9 +39,9 @@
 
 /* 6.14 bug */
 #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6100100) && (__ARMCC_VERSION < 6150001)
- 
+
 __attribute__((weak)) float __powisf2(float a, int b)
-{ 
+{
     const int recip = b < 0;
     float r = 1;
     while (1)
@@ -55,7 +55,7 @@ __attribute__((weak)) float __powisf2(float a, int b)
     }
     return recip ? 1/r : r;
 }
-#endif 
+#endif
 
 /**
  * @brief        Minkowski distance between two vectors
@@ -125,7 +125,7 @@ float32_t arm_minkowski_distance_f32(const float32_t *pA,const float32_t *pB, in
     float32x4_t sumV,aV,bV, tmpV, n;
     float32x2_t sumV2;
 
-    sum = 0.0f; 
+    sum = 0.0f;
     sumV = vdupq_n_f32(0.0f);
     n = vdupq_n_f32(order);
 
@@ -169,7 +169,7 @@ float32_t arm_minkowski_distance_f32(const float32_t *pA,const float32_t *pB, in
     float32_t sum;
     uint32_t i;
 
-    sum = 0.0f; 
+    sum = 0.0f;
     for(i=0; i < blockSize; i++)
     {
        sum += powf(fabsf(pA[i] - pB[i]),order);

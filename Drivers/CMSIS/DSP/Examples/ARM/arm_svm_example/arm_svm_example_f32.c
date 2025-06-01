@@ -61,7 +61,7 @@
 #include <stdio.h>
 #include "arm_math.h"
 
-/* 
+/*
   The polynomial SVM instance containing all parameters.
   Those parameters can be generated with the python library scikit-learn.
  */
@@ -94,7 +94,7 @@ const float32_t supportVectors[NB_SUPPORT_VECTORS*VECTOR_DIMENSION]={ 1.2510991f
 /*
   Class A is identified with value 0.
   Class B is identified with value 1.
-  
+
   This array is used by the SVM functions to do a conversion and ease the comparison
   with the Python code where different values could be used.
  */
@@ -108,7 +108,7 @@ int32_t main(void)
 
   /* Result of the classifier */
   int32_t result;
-  
+
 
   /*
     Initialization of the SVM instance parameters.
@@ -148,7 +148,7 @@ int32_t main(void)
   in[1] = 0.0f;
 
   arm_svm_polynomial_predict_f32(&params, in, &result);
-  
+
   /* Result should be 1 : Second class */
 #if defined(SEMIHOSTING)
   printf("Result = %d\n", result);
@@ -158,6 +158,3 @@ int32_t main(void)
   while (1); /* main function does not return */
 #endif
 }
-
-
-

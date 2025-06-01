@@ -14,7 +14,7 @@ configLib(CMSISDSPFiltering ${ROOT})
 configDsp(CMSISDSPFiltering ${ROOT})
 
 if (CONFIGTABLE AND ALLFAST)
-target_compile_definitions(CMSISDSPFiltering PUBLIC ARM_ALL_FAST_TABLES)  
+target_compile_definitions(CMSISDSPFiltering PUBLIC ARM_ALL_FAST_TABLES)
 endif()
 
 if (NOT CONFIGTABLE OR ALLFAST OR ARM_LMS_NORM_Q31)
@@ -143,6 +143,3 @@ endif()
 
 ### Includes
 target_include_directories(CMSISDSPFiltering PUBLIC "${DSP}/Include")
-
-
-

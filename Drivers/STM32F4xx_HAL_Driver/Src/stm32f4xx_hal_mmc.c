@@ -46,13 +46,13 @@
                   and according to your pin assignment;
         (##) DMA Configuration if you need to use DMA process (HAL_MMC_ReadBlocks_DMA()
              and HAL_MMC_WriteBlocks_DMA() APIs).
-            (+++) Enable the DMAx interface clock using __HAL_RCC_DMAx_CLK_ENABLE(); 
-            (+++) Configure the DMA using the function HAL_DMA_Init() with predeclared and filled. 
+            (+++) Enable the DMAx interface clock using __HAL_RCC_DMAx_CLK_ENABLE();
+            (+++) Configure the DMA using the function HAL_DMA_Init() with predeclared and filled.
         (##) NVIC configuration if you need to use interrupt process when using DMA transfer.
             (+++) Configure the SDMMC and DMA interrupt priorities using function HAL_NVIC_SetPriority();
                   DMA priority is superior to SDMMC's priority
             (+++) Enable the NVIC DMA and SDMMC IRQs using function HAL_NVIC_EnableIRQ()
-            (+++) SDMMC interrupts are managed using the macros __HAL_MMC_ENABLE_IT() 
+            (+++) SDMMC interrupts are managed using the macros __HAL_MMC_ENABLE_IT()
                   and __HAL_MMC_DISABLE_IT() inside the communication process.
             (+++) SDMMC interrupts pending bits are managed using the macros __HAL_MMC_GET_IT()
                   and __HAL_MMC_CLEAR_IT()
@@ -94,9 +94,9 @@
 
         This API (HAL_MMC_InitCard()) could be used also to reinitialize the card in case
         of plug-off plug-in.
-  
+
     (#) Configure the MMC Card Data transfer frequency. By Default, the card transfer
-        frequency is set to 24MHz. You can change or adapt this frequency by adjusting 
+        frequency is set to 24MHz. You can change or adapt this frequency by adjusting
         the "ClockDiv" field.
         In transfer mode and according to the MMC Card standard, make sure that the
         SDMMC_CK frequency doesn't exceed 25MHz and 50MHz in High-speed mode switch.
@@ -130,7 +130,7 @@
 
     (+) You can read from MMC card in Interrupt mode by using function HAL_MMC_ReadBlocks_IT().
         This function allows the read of 512 bytes blocks.
-        You can choose either one block read operation or multiple block read operation 
+        You can choose either one block read operation or multiple block read operation
         by adjusting the "NumberOfBlocks" parameter.
         After this, you have to ensure that the transfer is done correctly. The check is done
         through HAL_MMC_GetCardState() function for MMC card state.
@@ -154,18 +154,18 @@
         by adjusting the "NumberOfBlocks" parameter.
         After this, you have to ensure that the transfer is done correctly. The check is done
         through HAL_MMC_GetCardState() function for MMC card state.
-        You could also check the DMA transfer process through the MMC Tx interrupt event.  
+        You could also check the DMA transfer process through the MMC Tx interrupt event.
 
     (+) You can write to MMC card in Interrupt mode by using function HAL_MMC_WriteBlocks_IT().
         This function allows the read of 512 bytes blocks.
-        You can choose either one block read operation or multiple block read operation 
+        You can choose either one block read operation or multiple block read operation
         by adjusting the "NumberOfBlocks" parameter.
         After this, you have to ensure that the transfer is done correctly. The check is done
         through HAL_MMC_GetCardState() function for MMC card state.
         You could also check the IT transfer process through the MMC Tx interrupt event.
 
   *** MMC card information ***
-  =========================== 
+  ===========================
   [..]
     (+) To get MMC card information, you can use the function HAL_MMC_GetCardInfo().
         It returns useful information about the MMC card such as block size, card type,
@@ -431,7 +431,7 @@ HAL_StatusTypeDef HAL_MMC_InitCard(MMC_HandleTypeDef *hmmc)
   uint32_t errorstate;
   MMC_InitTypeDef Init;
   HAL_StatusTypeDef status;
-  
+
   /* Default SDIO peripheral configuration for MMC card initialization */
   Init.ClockEdge           = SDIO_CLOCK_EDGE_RISING;
   Init.ClockBypass         = SDIO_CLOCK_BYPASS_DISABLE;
@@ -448,8 +448,8 @@ HAL_StatusTypeDef HAL_MMC_InitCard(MMC_HandleTypeDef *hmmc)
   }
 
   /* Disable SDIO Clock */
-  __HAL_MMC_DISABLE(hmmc); 
-  
+  __HAL_MMC_DISABLE(hmmc);
+
   /* Set Power State to ON */
   status = SDIO_PowerState_ON(hmmc->Instance);
   if(status == HAL_ERROR)
@@ -769,7 +769,7 @@ HAL_StatusTypeDef HAL_MMC_ReadBlocks(MMC_HandleTypeDef *hmmc, uint8_t *pData, ui
       if(((HAL_GetTick()-tickstart) >=  Timeout) || (Timeout == 0U))
       {
         /* Clear all the static flags */
-        __HAL_MMC_CLEAR_FLAG(hmmc, SDIO_STATIC_FLAGS);        
+        __HAL_MMC_CLEAR_FLAG(hmmc, SDIO_STATIC_FLAGS);
         hmmc->ErrorCode |= HAL_MMC_ERROR_TIMEOUT;
         hmmc->State= HAL_MMC_STATE_READY;
         return HAL_ERROR;
@@ -1143,7 +1143,7 @@ HAL_StatusTypeDef HAL_MMC_WriteBlocks_IT(MMC_HandleTypeDef *hmmc, uint8_t *pData
       return HAL_ERROR;
     }
 
-    /* Configure the MMC DPSM (Data Path State Machine) */ 
+    /* Configure the MMC DPSM (Data Path State Machine) */
     config.DataTimeOut   = SDMMC_DATATIMEOUT;
     config.DataLength    = MMC_BLOCKSIZE * NumberOfBlocks;
     config.DataBlockSize = SDIO_DATABLOCK_SIZE_512B;
@@ -1151,7 +1151,7 @@ HAL_StatusTypeDef HAL_MMC_WriteBlocks_IT(MMC_HandleTypeDef *hmmc, uint8_t *pData
     config.TransferMode  = SDIO_TRANSFER_MODE_BLOCK;
     config.DPSM          = SDIO_DPSM_ENABLE;
     (void)SDIO_ConfigData(hmmc->Instance, &config);
-    
+
     return HAL_OK;
   }
   else
@@ -1265,7 +1265,7 @@ HAL_StatusTypeDef HAL_MMC_ReadBlocks_DMA(MMC_HandleTypeDef *hmmc, uint8_t *pData
       if(errorstate != HAL_MMC_ERROR_NONE)
       {
         /* Clear all the static flags */
-        __HAL_MMC_CLEAR_FLAG(hmmc, SDIO_STATIC_FLAGS); 
+        __HAL_MMC_CLEAR_FLAG(hmmc, SDIO_STATIC_FLAGS);
         __HAL_MMC_DISABLE_IT(hmmc, (SDIO_IT_DCRCFAIL | SDIO_IT_DTIMEOUT | SDIO_IT_RXOVERR | SDIO_IT_DATAEND));
         hmmc->ErrorCode = errorstate;
         hmmc->State = HAL_MMC_STATE_READY;
@@ -1326,7 +1326,7 @@ HAL_StatusTypeDef HAL_MMC_WriteBlocks_DMA(MMC_HandleTypeDef *hmmc, uint8_t *pDat
 	__HAL_MMC_ENABLE_IT(hmmc, (SDIO_IT_DCRCFAIL | SDIO_IT_DTIMEOUT | SDIO_IT_TXUNDERR | SDIO_IT_STBITERR));
 #else /* SDIO_STA_STBITERR not defined */
 	__HAL_MMC_ENABLE_IT(hmmc, (SDIO_IT_DCRCFAIL | SDIO_IT_DTIMEOUT | SDIO_IT_TXUNDERR));
-#endif /* SDIO_STA_STBITERR */	
+#endif /* SDIO_STA_STBITERR */
 
     /* Set the DMA transfer complete callback */
     hmmc->hdmatx->XferCpltCallback = MMC_DMATransmitCplt;
@@ -1385,8 +1385,8 @@ HAL_StatusTypeDef HAL_MMC_WriteBlocks_DMA(MMC_HandleTypeDef *hmmc, uint8_t *pDat
       return HAL_ERROR;
     }
     else
-    {    
-      /* Configure the MMC DPSM (Data Path State Machine) */ 
+    {
+      /* Configure the MMC DPSM (Data Path State Machine) */
       config.DataTimeOut   = SDMMC_DATATIMEOUT;
       config.DataLength    = MMC_BLOCKSIZE * NumberOfBlocks;
       config.DataBlockSize = SDIO_DATABLOCK_SIZE_512B;
@@ -1533,7 +1533,7 @@ void HAL_MMC_IRQHandler(MMC_HandleTypeDef *hmmc)
                                SDIO_IT_TXUNDERR | SDIO_IT_RXOVERR  | SDIO_IT_TXFIFOHE |\
                                SDIO_IT_RXFIFOHF);
 #endif /* SDIO_STA_STBITERR */
-    
+
     hmmc->Instance->DCTRL &= ~(SDIO_DCTRL_DTEN);
 
     if((context & MMC_CONTEXT_DMA) != 0U)
@@ -1556,9 +1556,9 @@ void HAL_MMC_IRQHandler(MMC_HandleTypeDef *hmmc)
         /* Disable the DMA transfer for transmit request by setting the DMAEN bit
         in the MMC DCTRL register */
         hmmc->Instance->DCTRL &= (uint32_t)~((uint32_t)SDIO_DCTRL_DMAEN);
-        
+
         hmmc->State = HAL_MMC_STATE_READY;
-        
+
 #if defined (USE_HAL_MMC_REGISTER_CALLBACKS) && (USE_HAL_MMC_REGISTER_CALLBACKS == 1U)
         hmmc->TxCpltCallback(hmmc);
 #else
@@ -1655,7 +1655,7 @@ void HAL_MMC_IRQHandler(MMC_HandleTypeDef *hmmc)
 #else /* SDIO_STA_STBITERR */
     /* Clear All flags */
     __HAL_MMC_CLEAR_FLAG(hmmc, SDIO_STATIC_DATA_FLAGS);
-    
+
     /* Disable all interrupts */
     __HAL_MMC_DISABLE_IT(hmmc, SDIO_IT_DATAEND | SDIO_IT_DCRCFAIL | SDIO_IT_DTIMEOUT|\
                              SDIO_IT_TXUNDERR| SDIO_IT_RXOVERR);
@@ -2174,7 +2174,7 @@ HAL_StatusTypeDef HAL_MMC_GetCardInfo(MMC_HandleTypeDef *hmmc, HAL_MMC_CardInfoT
   * @brief  Returns information the information of the card which are stored on
   *         the Extended CSD register.
   * @param  hmmc Pointer to MMC handle
-  * @param  pExtCSD Pointer to a memory area (512 bytes) that contains all 
+  * @param  pExtCSD Pointer to a memory area (512 bytes) that contains all
   *         Extended CSD register parameters
   * @param  Timeout Specify timeout value
   * @retval HAL status
@@ -2344,7 +2344,7 @@ HAL_StatusTypeDef HAL_MMC_ConfigWideBusOperation(MMC_HandleTypeDef *hmmc, uint32
         {
           break;
         }
-        
+
         /* Get command response */
         response = SDIO_GetResponse(hmmc->Instance, SDIO_RESP1);
         count--;
@@ -2434,7 +2434,7 @@ HAL_StatusTypeDef HAL_MMC_Abort(MMC_HandleTypeDef *hmmc)
   {
     /* Disable the MMC DMA request */
     hmmc->Instance->DCTRL &= (uint32_t)~((uint32_t)SDIO_DCTRL_DMAEN);
-    
+
     /* Abort the MMC DMA Tx Stream */
     if(hmmc->hdmatx != NULL)
     {
@@ -2491,7 +2491,7 @@ HAL_StatusTypeDef HAL_MMC_Abort_IT(MMC_HandleTypeDef *hmmc)
   {
     /* Disable the MMC DMA request */
     hmmc->Instance->DCTRL &= (uint32_t)~((uint32_t)SDIO_DCTRL_DMAEN);
-    
+
     /* Abort the MMC DMA Tx Stream */
     if(hmmc->hdmatx != NULL)
     {
@@ -2511,7 +2511,7 @@ HAL_StatusTypeDef HAL_MMC_Abort_IT(MMC_HandleTypeDef *hmmc)
       }
     }
   }
-  
+
   /* No transfer ongoing on both DMA channels*/
   if((hmmc->hdmatx == NULL) && (hmmc->hdmarx == NULL))
   {
@@ -2553,28 +2553,28 @@ HAL_StatusTypeDef HAL_MMC_Abort_IT(MMC_HandleTypeDef *hmmc)
   */
 
 /**
-  * @brief  DMA MMC transmit process complete callback 
+  * @brief  DMA MMC transmit process complete callback
   * @param  hdma: DMA handle
   * @retval None
   */
-static void MMC_DMATransmitCplt(DMA_HandleTypeDef *hdma)     
+static void MMC_DMATransmitCplt(DMA_HandleTypeDef *hdma)
 {
   MMC_HandleTypeDef* hmmc = (MMC_HandleTypeDef* )(hdma->Parent);
-  
+
   /* Enable DATAEND Interrupt */
   __HAL_MMC_ENABLE_IT(hmmc, (SDIO_IT_DATAEND));
 }
 
 /**
-  * @brief  DMA MMC receive process complete callback 
+  * @brief  DMA MMC receive process complete callback
   * @param  hdma: DMA handle
   * @retval None
   */
-static void MMC_DMAReceiveCplt(DMA_HandleTypeDef *hdma)  
+static void MMC_DMAReceiveCplt(DMA_HandleTypeDef *hdma)
 {
   MMC_HandleTypeDef* hmmc = (MMC_HandleTypeDef* )(hdma->Parent);
   uint32_t errorstate;
-  
+
   /* Send stop command in multiblock write */
   if(hmmc->Context == (MMC_CONTEXT_READ_MULTIPLE_BLOCK | MMC_CONTEXT_DMA))
   {
@@ -2589,14 +2589,14 @@ static void MMC_DMAReceiveCplt(DMA_HandleTypeDef *hdma)
 #endif
     }
   }
-  
+
   /* Disable the DMA transfer for transmit request by setting the DMAEN bit
   in the MMC DCTRL register */
   hmmc->Instance->DCTRL &= (uint32_t)~((uint32_t)SDIO_DCTRL_DMAEN);
-  
+
   /* Clear all the static flags */
   __HAL_MMC_CLEAR_FLAG(hmmc, SDIO_STATIC_DATA_FLAGS);
-  
+
   hmmc->State = HAL_MMC_STATE_READY;
 
 #if defined (USE_HAL_MMC_REGISTER_CALLBACKS) && (USE_HAL_MMC_REGISTER_CALLBACKS == 1U)
@@ -2607,40 +2607,40 @@ static void MMC_DMAReceiveCplt(DMA_HandleTypeDef *hdma)
 }
 
 /**
-  * @brief  DMA MMC communication error callback 
+  * @brief  DMA MMC communication error callback
   * @param  hdma: DMA handle
   * @retval None
   */
-static void MMC_DMAError(DMA_HandleTypeDef *hdma)   
+static void MMC_DMAError(DMA_HandleTypeDef *hdma)
 {
   MMC_HandleTypeDef* hmmc = (MMC_HandleTypeDef* )(hdma->Parent);
   HAL_MMC_CardStateTypeDef CardState;
   uint32_t RxErrorCode, TxErrorCode;
-  
+
   /* if DMA error is FIFO error ignore it */
   if(HAL_DMA_GetError(hdma) != HAL_DMA_ERROR_FE)
   {
     RxErrorCode = hmmc->hdmarx->ErrorCode;
-    TxErrorCode = hmmc->hdmatx->ErrorCode;  
+    TxErrorCode = hmmc->hdmatx->ErrorCode;
     if((RxErrorCode == HAL_DMA_ERROR_TE) || (TxErrorCode == HAL_DMA_ERROR_TE))
     {
       /* Clear All flags */
       __HAL_MMC_CLEAR_FLAG(hmmc, SDIO_STATIC_FLAGS);
-      
+
       /* Disable All interrupts */
       __HAL_MMC_DISABLE_IT(hmmc, SDIO_IT_DATAEND | SDIO_IT_DCRCFAIL | SDIO_IT_DTIMEOUT|\
         SDIO_IT_TXUNDERR| SDIO_IT_RXOVERR);
-      
+
       hmmc->ErrorCode |= HAL_MMC_ERROR_DMA;
       CardState = HAL_MMC_GetCardState(hmmc);
       if((CardState == HAL_MMC_CARD_RECEIVING) || (CardState == HAL_MMC_CARD_SENDING))
       {
         hmmc->ErrorCode |= SDMMC_CmdStopTransfer(hmmc->Instance);
       }
-      
+
       hmmc->State= HAL_MMC_STATE_READY;
     }
-    
+
 #if defined (USE_HAL_MMC_REGISTER_CALLBACKS) && (USE_HAL_MMC_REGISTER_CALLBACKS == 1U)
     hmmc->ErrorCallback(hmmc);
 #else
@@ -2650,20 +2650,20 @@ static void MMC_DMAError(DMA_HandleTypeDef *hdma)
 }
 
 /**
-  * @brief  DMA MMC Tx Abort callback 
+  * @brief  DMA MMC Tx Abort callback
   * @param  hdma: DMA handle
   * @retval None
   */
-static void MMC_DMATxAbort(DMA_HandleTypeDef *hdma)   
+static void MMC_DMATxAbort(DMA_HandleTypeDef *hdma)
 {
   MMC_HandleTypeDef* hmmc = (MMC_HandleTypeDef* )(hdma->Parent);
   HAL_MMC_CardStateTypeDef CardState;
-  
+
   if(hmmc->hdmatx != NULL)
   {
     hmmc->hdmatx = NULL;
   }
-  
+
   /* All DMA channels are aborted */
   if(hmmc->hdmarx == NULL)
   {
@@ -2673,7 +2673,7 @@ static void MMC_DMATxAbort(DMA_HandleTypeDef *hdma)
     if((CardState == HAL_MMC_CARD_RECEIVING) || (CardState == HAL_MMC_CARD_SENDING))
     {
       hmmc->ErrorCode |= SDMMC_CmdStopTransfer(hmmc->Instance);
-      
+
       if(hmmc->ErrorCode != HAL_MMC_ERROR_NONE)
       {
 #if defined (USE_HAL_MMC_REGISTER_CALLBACKS) && (USE_HAL_MMC_REGISTER_CALLBACKS == 1U)
@@ -2695,20 +2695,20 @@ static void MMC_DMATxAbort(DMA_HandleTypeDef *hdma)
 }
 
 /**
-  * @brief  DMA MMC Rx Abort callback 
+  * @brief  DMA MMC Rx Abort callback
   * @param  hdma: DMA handle
   * @retval None
   */
-static void MMC_DMARxAbort(DMA_HandleTypeDef *hdma)   
+static void MMC_DMARxAbort(DMA_HandleTypeDef *hdma)
 {
   MMC_HandleTypeDef* hmmc = (MMC_HandleTypeDef* )(hdma->Parent);
   HAL_MMC_CardStateTypeDef CardState;
-  
+
   if(hmmc->hdmarx != NULL)
   {
     hmmc->hdmarx = NULL;
   }
-  
+
   /* All DMA channels are aborted */
   if(hmmc->hdmatx == NULL)
   {
@@ -2718,7 +2718,7 @@ static void MMC_DMARxAbort(DMA_HandleTypeDef *hdma)
     if((CardState == HAL_MMC_CARD_RECEIVING) || (CardState == HAL_MMC_CARD_SENDING))
     {
       hmmc->ErrorCode |= SDMMC_CmdStopTransfer(hmmc->Instance);
-      
+
       if(hmmc->ErrorCode != HAL_MMC_ERROR_NONE)
       {
 #if defined (USE_HAL_MMC_REGISTER_CALLBACKS) && (USE_HAL_MMC_REGISTER_CALLBACKS == 1U)
@@ -2821,7 +2821,7 @@ static uint32_t MMC_InitCard(MMC_HandleTypeDef *hmmc)
   {
     hmmc->ErrorCode |= errorstate;
   }
-  
+
   /* Get Extended CSD parameters */
   if (HAL_MMC_GetCardExtCSD(hmmc, hmmc->Ext_CSD, SDMMC_DATATIMEOUT) != HAL_OK)
   {

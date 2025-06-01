@@ -503,14 +503,14 @@ extern "C"
      #if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FAST_TABLES) || defined(ARM_TABLE_FAST_SQRT_Q31_MVE)
        extern const q31_t sqrtTable_Q31[256];
      #endif /* !defined(ARM_DSP_CONFIG_TABLES) defined(ARM_ALL_FAST_TABLES) */
-  #endif 
+  #endif
 
   /* Accurate scalar sqrt */
-  #if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FAST_TABLES) || defined(ARM_TABLE_SQRT_Q31) 
+  #if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FAST_TABLES) || defined(ARM_TABLE_SQRT_Q31)
        extern const q31_t sqrt_initial_lut_q31[32];
   #endif
 
-  #if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FAST_TABLES) || defined(ARM_TABLE_SQRT_Q15) 
+  #if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FAST_TABLES) || defined(ARM_TABLE_SQRT_Q15)
        extern const q15_t sqrt_initial_lut_q15[16];
   #endif
 
@@ -536,4 +536,3 @@ extern const unsigned char hwLUT[256];
 #endif
 
 #endif /*  ARM_COMMON_TABLES_H */
-

@@ -26,7 +26,7 @@
  * limitations under the License.
  */
 
-#include "dsp/fast_math_functions_f16.h"        
+#include "dsp/fast_math_functions_f16.h"
 
 #if defined(ARM_FLOAT16_SUPPORTED)
 
@@ -110,7 +110,7 @@ __STATIC_FORCEINLINE float16_t arm_atan_f16(float16_t x)
   @param[in]   x  x coordinate
   @param[out]  result  Result
   @return  error status.
- 
+
   @par         Compute the Arc tangent of y/x:
                    The sign of y and x are used to determine the right quadrant
                    and compute the right angle.
@@ -159,7 +159,7 @@ arm_status arm_atan2_f16(float16_t y,float16_t x,float16_t *result)
             return(ARM_MATH_SUCCESS);
         }
     }
-    
+
 
     return(ARM_MATH_NANINF);
 

@@ -158,4 +158,3 @@
   /**
    * @} end of BilinearInterpolate group
    */
-

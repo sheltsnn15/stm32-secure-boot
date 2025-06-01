@@ -56,7 +56,7 @@
  *
  * q and -q are representing the same rotation. This ambiguity must be taken into
  * account when using the output of this function.
- * 
+ *
  */
 
 #if defined(ARM_MATH_MVEF) && !defined(ARM_MATH_AUTOVECTORIZE)
@@ -73,12 +73,12 @@
 #define R21  vgetq_lane(q2,3)
 #define R22  ro22
 
-void arm_rotation2quaternion_f32(const float32_t *pInputRotations, 
-    float32_t *pOutputQuaternions,  
+void arm_rotation2quaternion_f32(const float32_t *pInputRotations,
+    float32_t *pOutputQuaternions,
     uint32_t nbQuaternions)
 {
    float32_t ro22, trace;
-   f32x4_t q1,q2, q; 
+   f32x4_t q1,q2, q;
 
    float32_t doubler;
    float32_t s;
@@ -162,8 +162,8 @@ void arm_rotation2quaternion_f32(const float32_t *pInputRotations,
 }
 
 #else
-void arm_rotation2quaternion_f32(const float32_t *pInputRotations, 
-    float32_t *pOutputQuaternions,  
+void arm_rotation2quaternion_f32(const float32_t *pInputRotations,
+    float32_t *pOutputQuaternions,
     uint32_t nbQuaternions)
 {
    uint32_t nb;

@@ -97,7 +97,7 @@ void arm_min_q15(
     indexVec = vpselq(extremIdxVec, vdupq_n_u16(blockSize - 1), p0);
     *pIndex = vminvq(blockSize - 1, indexVec);
     *pResult = minValue;
- 
+
 }
 #else
 void arm_min_q15(

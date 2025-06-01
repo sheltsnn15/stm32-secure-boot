@@ -87,7 +87,7 @@ void arm_var_f16(
         pSrc += 8;
     }
     while (blkCnt > 0);
-    
+
     /* Variance */
     *pResult = (_Float16)vecAddAcrossF16Mve(sumVec) / (_Float16) (blockSize - 1.0f16);
 }
@@ -205,5 +205,4 @@ void arm_var_f16(
   @} end of variance group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

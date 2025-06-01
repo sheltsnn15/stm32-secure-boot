@@ -118,4 +118,3 @@
   /**
    * @} end of BilinearInterpolate group
    */
-

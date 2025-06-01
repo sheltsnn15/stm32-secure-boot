@@ -111,4 +111,3 @@ uint32_t SAI_GetInputClock(const SAI_HandleTypeDef *hsai);
 #endif
 
 #endif /* __STM32F4xx_HAL_SAI_EX_H */
-

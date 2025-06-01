@@ -1199,5 +1199,3 @@ void arm_radix4_butterfly_inverse_f32(
 
 #endif /* #if defined (ARM_MATH_LOOPUNROLL) */
 }
-
-

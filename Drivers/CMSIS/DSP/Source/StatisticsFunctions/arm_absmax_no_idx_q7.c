@@ -69,7 +69,7 @@ void arm_absmax_no_idx_q7(
     blkCnt = blockSize >> 4;
     while (blkCnt > 0)
     {
-        vecSrc = vld1q(pSrcVec); 
+        vecSrc = vld1q(pSrcVec);
         pSrcVec += 16;
         /*
          * update per-lane max.
@@ -87,7 +87,7 @@ void arm_absmax_no_idx_q7(
     blkCnt = blockSize & 0xF;
     if (blkCnt > 0)
     {
-        vecSrc = vld1q(pSrcVec); 
+        vecSrc = vld1q(pSrcVec);
         pSrcVec += 16;
         p0 = vctp8q(blkCnt);
         /*

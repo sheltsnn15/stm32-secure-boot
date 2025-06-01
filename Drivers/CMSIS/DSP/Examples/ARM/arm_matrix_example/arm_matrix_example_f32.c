@@ -212,7 +212,7 @@ int32_t main(void)
   *            Initialise status depending on SNR calculations
   *------------------------------------------------------------------------------*/
   status = (snr < SNR_THRESHOLD) ? ARM_MATH_TEST_FAILURE : ARM_MATH_SUCCESS;
-  
+
   if (status != ARM_MATH_SUCCESS)
   {
 #if defined (SEMIHOSTING)

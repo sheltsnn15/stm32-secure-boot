@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _BAYES_FUNCTIONS_F16_H_
 #define _BAYES_FUNCTIONS_F16_H_
 
@@ -67,8 +67,8 @@ typedef struct
  */
 
 
-uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_instance_f16 *S, 
-   const float16_t * in, 
+uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_instance_f16 *S,
+   const float16_t * in,
    float16_t *pOutputProbabilities,
    float16_t *pBufferB);
 

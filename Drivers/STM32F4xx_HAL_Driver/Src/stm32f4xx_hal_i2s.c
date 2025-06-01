@@ -973,7 +973,7 @@ HAL_StatusTypeDef HAL_I2S_Receive(I2S_HandleTypeDef *hi2s, uint16_t *pData, uint
 
   /* Process Locked */
   __HAL_LOCK(hi2s);
-  
+
   /* Set state and reset error code */
   hi2s->State = HAL_I2S_STATE_BUSY_RX;
   hi2s->ErrorCode = HAL_I2S_ERROR_NONE;
@@ -2089,4 +2089,3 @@ static HAL_StatusTypeDef I2S_WaitFlagStateUntilTimeout(I2S_HandleTypeDef *hi2s, 
   */
 
 #endif /* HAL_I2S_MODULE_ENABLED */
-

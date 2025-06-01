@@ -25,4 +25,3 @@ target_sources(CMSISDSPSupport PRIVATE arm_f16_to_float.c)
 target_sources(CMSISDSPSupport PRIVATE arm_weighted_sum_f16.c)
 target_sources(CMSISDSPSupport PRIVATE arm_barycenter_f16.c)
 endif()
-

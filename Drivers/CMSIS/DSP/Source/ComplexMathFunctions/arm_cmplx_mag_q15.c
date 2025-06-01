@@ -79,7 +79,7 @@ void arm_cmplx_mag_q15(
     blkCnt = blockSize >> 3;
     while (blkCnt > 0U)
     {
-        vecSrc = vld2q(pSrc);  
+        vecSrc = vld2q(pSrc);
         pSrc += 16;
 
         acc0V = vdupq_n_s32(0);
@@ -98,7 +98,7 @@ void arm_cmplx_mag_q15(
         prod1 = vmulltq_int_s16(vecSrc.val[1], vecSrc.val[1]);
         acc1V = vqaddq_s32(acc1V,prod1);
 
-       
+
 
         acc0V = vshrq(acc0V, 1);
         acc1V = vshrq(acc1V, 1);
@@ -110,7 +110,7 @@ void arm_cmplx_mag_q15(
         resV = vqshrnbq_n_s32(resV,acc0V,16);
         resV = vqshrntq_n_s32(resV,acc1V,16);
 
-        vst1q(pDst, resV); 
+        vst1q(pDst, resV);
         pDst += 8;
         /*
          * Decrement the blockSize loop counter
@@ -126,15 +126,15 @@ void arm_cmplx_mag_q15(
     while (blkCnt > 0U)
     {
       /* C[0] = sqrt(A[0] * A[0] + A[1] * A[1]) */
-  
+
       in = read_q15x2_ia ((q15_t **) &pSrc);
       acc0 = __SMUAD(in, in);
-  
+
       /* store result in 2.14 format in destination buffer. */
       arm_sqrt_q31(acc0  >> 1 , &res);
       *pDst++ = res >> 16;
-  
-  
+
+
       /* Decrement loop counter */
       blkCnt--;
     }
@@ -253,7 +253,7 @@ void arm_cmplx_mag_q15(
     /* store result in 2.14 format in destination buffer. */
     arm_sqrt_q31((acc0 + acc1) >> 1 , &res);
     *pDst++ = res >> 16;
- 
+
 #endif
 
     /* Decrement loop counter */

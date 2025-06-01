@@ -248,7 +248,7 @@ int32_t main(void)
   arm_min_f32(lmsNormCoeff_f32, NUMTAPS, &minValue, &index);
 
   status = (minValue > DELTA_COEFF) ? ARM_MATH_TEST_FAILURE : ARM_MATH_SUCCESS;
-  
+
   if (status != ARM_MATH_SUCCESS)
   {
 #if defined (SEMIHOSTING)

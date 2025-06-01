@@ -53,7 +53,7 @@
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) && defined(__CMSIS_GCC_H)
 #pragma GCC warning "Scalar version of arm_levinson_durbin_f16 built. Helium version has build issues with gcc."
-#endif 
+#endif
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) &&  !defined(__CMSIS_GCC_H)
 
@@ -62,7 +62,7 @@
 #define LANE4567_MASK 0xFF00
 
 void arm_levinson_durbin_f16(const float16_t *phi,
-  float16_t *a, 
+  float16_t *a,
   float16_t *err,
   int nbCoefs)
 {
@@ -78,7 +78,7 @@ void arm_levinson_durbin_f16(const float16_t *phi,
       _Float16 sumb = 0.0f16;
       f16x8_t vecA,vecRevPhi,vecPhi,vecSumA, vecSumB;
       _Float16 k;
-      uint32_t blkCnt; 
+      uint32_t blkCnt;
       const float16_t *pPhi,*pRevPhi,*pA;
       uint16x8_t revOffset;
 
@@ -145,7 +145,7 @@ void arm_levinson_durbin_f16(const float16_t *phi,
       j=0;
       for(int i = 0; i < nb ; i++)
       {
-          
+
           /*
             x0=a[j] - k * a[p-1-j];
             x1=a[j+1] - k * a[p-2-j];
@@ -161,18 +161,18 @@ void arm_levinson_durbin_f16(const float16_t *phi,
           uint64_t tmpa,tmpb;
           vecA = vldrhq_gather_shifted_offset_f16(a,offset);
 
-          
+
           tmpa = vgetq_lane_u64((uint64x2_t)vecA,0);
           tmpb = vgetq_lane_u64((uint64x2_t)vecA,1);
           vecRevA = (f16x8_t) vsetq_lane_u64(tmpb,(uint64x2_t)vecRevA,0);
           vecRevA = (f16x8_t) vsetq_lane_u64(tmpa,(uint64x2_t)vecRevA,1);
-          
+
 
           tmp = vsubq(vecA,vmulq_n_f16(vecRevA,k));
           vstrhq_scatter_shifted_offset_f16(a, offset, tmp);
 
           offset = vaddq(offset,offsetInc);
- 
+
           j+=4;
 
       }
@@ -185,16 +185,16 @@ void arm_levinson_durbin_f16(const float16_t *phi,
          for(int i =0;i < nb ; i++)
          {
              _Float16 x,y;
-   
+
              x=(_Float16)a[j] - (_Float16)k * (_Float16)a[p-1-j];
              y=(_Float16)a[p-1-j] - (_Float16)k * (_Float16)a[j];
-   
+
              a[j] = x;
              a[p-1-j] = y;
-   
+
              j++;
          }
-   
+
          nb = blkCnt & 1;
          if (nb)
          {
@@ -202,7 +202,7 @@ void arm_levinson_durbin_f16(const float16_t *phi,
          }
       }
 
-     
+
       a[p] = k;
       e = e * (1.0f16 - k*k);
 
@@ -216,7 +216,7 @@ void arm_levinson_durbin_f16(const float16_t *phi,
 #if defined(ARM_FLOAT16_SUPPORTED)
 
 void arm_levinson_durbin_f16(const float16_t *phi,
-  float16_t *a, 
+  float16_t *a,
   float16_t *err,
   int nbCoefs)
 {

@@ -159,7 +159,7 @@ void arm_svm_polynomial_predict_f32(
         vSum = vfmaq_f32(vSum, vld1q(pDualCoef),
                              arm_vec_exponent_f32
                              (vaddq_n_f32(vmulq_n_f32(vtmp, S->gamma), S->coef0), S->degree));
-        
+
         pDualCoef += 4;
 
         pSrcA += numCols * 4;
@@ -233,9 +233,9 @@ void arm_svm_polynomial_predict_f32(
 
         vSum = vfmaq_m_f32(vSum, vld1q(pDualCoef),
                              arm_vec_exponent_f32
-                             (vaddq_n_f32(vmulq_n_f32(vtmp, S->gamma), S->coef0), S->degree), 
+                             (vaddq_n_f32(vmulq_n_f32(vtmp, S->gamma), S->coef0), S->degree),
                              vctp32q(2));
-        
+
         pDualCoef += 2;
         pSrcA += numCols * 2;
         row -= 2;
@@ -292,12 +292,12 @@ void arm_svm_polynomial_predict_f32(
         vtmp = vsetq_lane(vecAddAcrossF32Mve(acc0), vtmp, 0);
         vSum = vfmaq_m_f32(vSum, vld1q(pDualCoef),
                              arm_vec_exponent_f32
-                             (vaddq_n_f32(vmulq_n_f32(vtmp, S->gamma), S->coef0), S->degree), 
+                             (vaddq_n_f32(vmulq_n_f32(vtmp, S->gamma), S->coef0), S->degree),
                              vctp32q(1));
     }
     sum += vecAddAcrossF32Mve(vSum);
 
-    
+
     *pResult = S->classes[STEP(sum)];
 }
 
@@ -309,9 +309,9 @@ void arm_svm_polynomial_predict_f32(
     int32_t * pResult)
 {
     float32_t sum = S->intercept;
-   
+
     float32_t dot;
-    float32x4_t dotV; 
+    float32x4_t dotV;
 
     float32x4_t accuma,accumb,accumc,accumd,accum;
     float32x2_t accum2;
@@ -320,8 +320,8 @@ void arm_svm_polynomial_predict_f32(
 
     float32x4_t vec2,vec2a,vec2b,vec2c,vec2d;
 
-    uint32_t blkCnt;   
-    uint32_t vectorBlkCnt;   
+    uint32_t blkCnt;
+    uint32_t vectorBlkCnt;
 
     const float32_t *pIn = in;
 
@@ -351,7 +351,7 @@ void arm_svm_polynomial_predict_f32(
         blkCnt = S->vectorDimension >> 2;
         while (blkCnt > 0U)
         {
-        
+
             vec1 = vld1q_f32(pIn);
             vec2a = vld1q_f32(pSupporta);
             vec2b = vld1q_f32(pSupportb);
@@ -398,7 +398,7 @@ void arm_svm_polynomial_predict_f32(
         }
 
         vec1 = vld1q_f32(pDualCoefs);
-        pDualCoefs += 4; 
+        pDualCoefs += 4;
 
         // To vectorize later
         dotV = vmulq_n_f32(dotV, S->gamma);
@@ -430,7 +430,7 @@ void arm_svm_polynomial_predict_f32(
         blkCnt = S->vectorDimension >> 2;
         while (blkCnt > 0U)
         {
-        
+
             vec1 = vld1q_f32(pIn);
             vec2 = vld1q_f32(pSupport);
             pIn += 4;

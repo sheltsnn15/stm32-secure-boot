@@ -766,4 +766,3 @@ static void FLASH_SetErrorCode(void)
 /**
   * @}
   */
-

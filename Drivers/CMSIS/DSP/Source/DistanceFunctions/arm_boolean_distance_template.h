@@ -33,7 +33,7 @@
 /**
  * @defgroup DISTANCEF Distance Functions
  *
- * Computes Distances between vectors. 
+ * Computes Distances between vectors.
  *
  * Distance functions are useful in a lot of algorithms.
  *
@@ -48,7 +48,7 @@
 
 
 
-#define _FUNC(A,B) A##B 
+#define _FUNC(A,B) A##B
 
 #define FUNC(EXT) _FUNC(arm_boolean_distance, EXT)
 
@@ -337,7 +337,7 @@ void FUNC(EXT)(const uint32_t *pA
        tmp3 = vpaddlq_u16(tmp2);
        tmp4 = vpaddlq_u32(tmp3);
        tmp4tf = vaddq_u64(tmp4tf, tmp4);
-#endif 
+#endif
 
 #ifdef FT
        tmp = vcntq_u8(vreinterpretq_u8_u32(cftV));
@@ -456,7 +456,7 @@ void FUNC(EXT)(const uint32_t *pA
 #endif
        )
 {
-  
+
 #ifdef TT
     uint32_t _ctt=0;
 #endif
@@ -535,7 +535,7 @@ void FUNC(EXT)(const uint32_t *pA
 #ifdef FF
     *cFF = _cff;
 #endif
-#ifdef TF 
+#ifdef TF
     *cTF = _ctf;
 #endif
 #ifdef FT

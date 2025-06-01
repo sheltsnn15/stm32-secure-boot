@@ -57,7 +57,7 @@
 
 #include "arm_helium_utils.h"
 
-void arm_quaternion_inverse_f32(const float32_t *pInputQuaternions, 
+void arm_quaternion_inverse_f32(const float32_t *pInputQuaternions,
   float32_t *pInverseQuaternions,
   uint32_t nbQuaternions)
 {
@@ -66,11 +66,11 @@ void arm_quaternion_inverse_f32(const float32_t *pInputQuaternions,
 
    for(uint32_t i=0; i < nbQuaternions; i++)
    {
-     
+
       vec1 = vld1q(pInputQuaternions);
       vec2 = vmulq(vec1,vec1);
       squaredSum = vecAddAcrossF32Mve(vec2);
-      
+
 
       vec1 = vmulq_n_f32(vec1, 1.0f / squaredSum);
       vec1 = vsetq_lane_f32(-vgetq_lane(vec1, 0),vec1,0);
@@ -86,7 +86,7 @@ void arm_quaternion_inverse_f32(const float32_t *pInputQuaternions,
 }
 
 #else
-void arm_quaternion_inverse_f32(const float32_t *pInputQuaternions, 
+void arm_quaternion_inverse_f32(const float32_t *pInputQuaternions,
   float32_t *pInverseQuaternions,
   uint32_t nbQuaternions)
 {

@@ -174,7 +174,7 @@ arm_status arm_mat_inverse_f64(
       /* Temporary variable to hold the pivot value */
       in = *pInT1;
 
-    
+
 
       /* Check if the pivot element is zero */
       if (*pInT1 == 0.0)

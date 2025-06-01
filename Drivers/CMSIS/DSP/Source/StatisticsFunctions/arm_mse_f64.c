@@ -63,17 +63,17 @@ void arm_mse_f64(
 #if defined (ARM_MATH_LOOPUNROLL)
   blkCnt = (blockSize) >> 1;
 
- 
+
   while (blkCnt > 0U)
   {
 
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = inA - inB;
     sum += inA * inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = inA - inB;
     sum += inA * inA;
@@ -82,7 +82,7 @@ void arm_mse_f64(
     blkCnt--;
   }
 
-  
+
   /* Loop unrolling: Compute remaining outputs */
   blkCnt = (blockSize) & 1;
 #else
@@ -91,7 +91,7 @@ void arm_mse_f64(
 #endif
   while (blkCnt > 0U)
   {
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = inA - inB;
     sum += inA * inA;

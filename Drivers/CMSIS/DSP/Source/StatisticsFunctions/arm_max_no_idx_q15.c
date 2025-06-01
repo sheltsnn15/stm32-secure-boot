@@ -67,7 +67,7 @@ void arm_max_no_idx_q15(
     blkCnt = blockSize >> 3;
     while (blkCnt > 0)
     {
-        vecSrc = vld1q(pSrcVec); 
+        vecSrc = vld1q(pSrcVec);
         pSrcVec += 8;
         /*
          * update per-lane max.
@@ -85,7 +85,7 @@ void arm_max_no_idx_q15(
     blkCnt = blockSize & 7;
     if (blkCnt > 0)
     {
-        vecSrc = vld1q(pSrcVec); 
+        vecSrc = vld1q(pSrcVec);
         pSrcVec += 8;
         p0 = vctp16q(blkCnt);
         /*
@@ -107,32 +107,32 @@ void arm_max_no_idx_q15(
         uint32_t blockSize,
         q15_t * pResult)
 {
-  q15_t maxVal1, out;       /* Temporary variables to store the output value. */     
-  uint32_t blkCnt;              /* loop counter */                                 
-                                                                                   
-  /* Load first input value that act as reference value for comparision */         
-  out = *pSrc++;                                                                   
-                                                                                   
-  blkCnt = (blockSize - 1U);                                                       
-                                                                                   
-                                                                                   
-  while (blkCnt > 0U)                                                              
-  {                                                                                
-    /* Initialize maxVal to the next consecutive values one by one */              
-    maxVal1 = *pSrc++;                                                             
-                                                                                   
-    /* compare for the maximum value */                                            
-    if (out < maxVal1)                                                             
-    {                                                                              
-      /* Update the maximum value */                                               
-      out = maxVal1;                                                               
-    }                                                                              
-                                                                                   
-    /* Decrement the loop counter */                                               
-    blkCnt--;                                                                      
-  }                                                                                
-                                                                                   
-  /* Store the maximum value into destination pointer */                           
+  q15_t maxVal1, out;       /* Temporary variables to store the output value. */
+  uint32_t blkCnt;              /* loop counter */
+
+  /* Load first input value that act as reference value for comparision */
+  out = *pSrc++;
+
+  blkCnt = (blockSize - 1U);
+
+
+  while (blkCnt > 0U)
+  {
+    /* Initialize maxVal to the next consecutive values one by one */
+    maxVal1 = *pSrc++;
+
+    /* compare for the maximum value */
+    if (out < maxVal1)
+    {
+      /* Update the maximum value */
+      out = maxVal1;
+    }
+
+    /* Decrement the loop counter */
+    blkCnt--;
+  }
+
+  /* Store the maximum value into destination pointer */
   *pResult = out;
 }
 

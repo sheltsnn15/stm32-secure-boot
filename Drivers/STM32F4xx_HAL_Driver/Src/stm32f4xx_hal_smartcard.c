@@ -2383,5 +2383,3 @@ static void SMARTCARD_SetConfig(SMARTCARD_HandleTypeDef *hsc)
 /**
   * @}
   */
-
-

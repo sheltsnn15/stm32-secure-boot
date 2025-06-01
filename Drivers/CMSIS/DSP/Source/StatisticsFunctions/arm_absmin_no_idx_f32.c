@@ -71,7 +71,7 @@ void arm_absmin_no_idx_f32(
     blkCnt = blockSize >> 2;
     while (blkCnt > 0)
     {
-        vecSrc = vldrwq_f32(pSrcVec);  
+        vecSrc = vldrwq_f32(pSrcVec);
         pSrcVec += 4;
         /*
          * update per-lane min.
@@ -89,7 +89,7 @@ void arm_absmin_no_idx_f32(
     blkCnt = blockSize & 3;
     if (blkCnt > 0)
     {
-        vecSrc = vldrwq_f32(pSrcVec);  
+        vecSrc = vldrwq_f32(pSrcVec);
         pSrcVec += 4;
         p0 = vctp32q(blkCnt);
         /*

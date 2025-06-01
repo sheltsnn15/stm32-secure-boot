@@ -81,7 +81,7 @@ void arm_absmin_f16(
     blkCnt = blockSize >> 3;
     while (blkCnt > 0U)
     {
-        vecSrc = vldrhq_f16(pSrcVec);  
+        vecSrc = vldrhq_f16(pSrcVec);
         pSrcVec += 8;
         vecSrc = vabsq(vecSrc);
         /*
@@ -107,7 +107,7 @@ void arm_absmin_f16(
     {
         p0 = vctp16q(blkCnt);
 
-        vecSrc = vldrhq_f16(pSrcVec);  
+        vecSrc = vldrhq_f16(pSrcVec);
         pSrcVec += 8;
         vecSrc = vabsq(vecSrc);
         /*
@@ -224,7 +224,7 @@ void arm_absmin_f16(
                                                                                                             \
   /* Store the extrema value and it's index into destination pointers */                                    \
   *pResult = out;                                                                                           \
-  *pIndex = outIndex;  
+  *pIndex = outIndex;
 }
 #else
 void arm_absmin_f16(
@@ -272,5 +272,4 @@ void arm_absmin_f16(
   @} end of AbsMin group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

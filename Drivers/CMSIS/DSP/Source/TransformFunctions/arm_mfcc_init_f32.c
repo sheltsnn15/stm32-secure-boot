@@ -98,7 +98,7 @@ arm_status arm_mfcc_init_f32(
  #else
  status=arm_rfft_fast_init_f32(&(S->rfft),fftLen);
  #endif
- 
+
  return(status);
 }
 

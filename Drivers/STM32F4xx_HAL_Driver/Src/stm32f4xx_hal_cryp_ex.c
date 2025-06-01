@@ -676,4 +676,3 @@ void  HAL_CRYPEx_DisableAutoKeyDerivation(CRYP_HandleTypeDef *hcryp)
 /**
   * @}
   */
-

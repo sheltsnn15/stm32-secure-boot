@@ -78,7 +78,7 @@
           b2 c2   x2   a2
              c3   x3   a3
 
-    x3 = a3 / c3 
+    x3 = a3 / c3
     x2 = (a2 - c2 x3) / b2
 
     */
@@ -129,7 +129,7 @@
             lt_row = &pLT[n*i];
 
             _Float16 tmp=a_col[i * cols];
-            
+
             for(k=0; k < i; k++)
             {
                 tmp -= (_Float16)lt_row[k] * (_Float16)pX[cols*k+j];
@@ -179,7 +179,7 @@
           b2 c2   x2   a2
              c3   x3   a3
 
-    x3 = a3 / c3 
+    x3 = a3 / c3
     x2 = (a2 - c2 x3) / b2
 
     */
@@ -204,7 +204,7 @@
             lt_row = &pLT[n*i];
 
             float16_t tmp=a_col[i * cols];
-            
+
             for(k=0; k < i; k++)
             {
                 tmp -= (_Float16)lt_row[k] * (_Float16)pX[cols*k+j];
@@ -231,4 +231,4 @@
 /**
   @} end of MatrixInv group
  */
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

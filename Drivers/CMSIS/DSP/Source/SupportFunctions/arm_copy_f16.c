@@ -126,5 +126,4 @@ void arm_copy_f16(
   @} end of BasicCopy group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

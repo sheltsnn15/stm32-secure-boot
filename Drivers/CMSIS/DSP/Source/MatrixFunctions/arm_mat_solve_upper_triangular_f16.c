@@ -93,16 +93,16 @@ arm_status status;                             /* status of matrix inverse */
 
     f16x8_t vecA;
     f16x8_t vecX;
-    
+
     for(i=n-1; i >= 0 ; i--)
     {
       for(j=0; j+7 < cols; j +=8)
       {
             vecA = vld1q_f16(&pA[i * cols + j]);
-            
+
             for(k=n-1; k > i; k--)
             {
-                vecX = vld1q_f16(&pX[cols*k+j]);          
+                vecX = vld1q_f16(&pX[cols*k+j]);
                 vecA = vfmsq(vecA,vdupq_n_f16(pUT[n*i + k]),vecX);
             }
 
@@ -113,7 +113,7 @@ arm_status status;                             /* status of matrix inverse */
 
             invUT = 1.0f16 / (_Float16)pUT[n*i + i];
             vecA = vmulq(vecA,vdupq_n_f16(invUT));
-           
+
 
             vst1q(&pX[i*cols+j],vecA);
       }
@@ -125,7 +125,7 @@ arm_status status;                             /* status of matrix inverse */
             ut_row = &pUT[n*i];
 
             _Float16 tmp=a_col[i * cols];
-            
+
             for(k=n-1; k > i; k--)
             {
                 tmp -= (_Float16)ut_row[k] * (_Float16)pX[cols*k+j];
@@ -144,7 +144,7 @@ arm_status status;                             /* status of matrix inverse */
 
   }
 
-  
+
   /* Return to application */
   return (status);
 }
@@ -194,7 +194,7 @@ arm_status status;                             /* status of matrix inverse */
             ut_row = &pUT[n*i];
 
             float16_t tmp=a_col[i * cols];
-            
+
             for(k=n-1; k > i; k--)
             {
                 tmp -= (_Float16)ut_row[k] * (_Float16)pX[cols*k+j];
@@ -213,7 +213,7 @@ arm_status status;                             /* status of matrix inverse */
 
   }
 
-  
+
   /* Return to application */
   return (status);
 }
@@ -223,4 +223,4 @@ arm_status status;                             /* status of matrix inverse */
 /**
   @} end of MatrixInv group
  */
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _MATRIX_FUNCTIONS_F16_H_
 #define _MATRIX_FUNCTIONS_F16_H_
 
@@ -38,7 +38,7 @@ extern "C"
 
 #include "dsp/none.h"
 #include "dsp/utils.h"
-    
+
 #if defined(ARM_FLOAT16_SUPPORTED)
 
  /**
@@ -118,8 +118,8 @@ arm_status arm_mat_mult_f16(
    * @param[out] pDst     points to output vector
    */
 void arm_mat_vec_mult_f16(
-  const arm_matrix_instance_f16 *pSrcMat, 
-  const float16_t *pVec, 
+  const arm_matrix_instance_f16 *pSrcMat,
+  const float16_t *pVec,
   float16_t *pDst);
 
   /**

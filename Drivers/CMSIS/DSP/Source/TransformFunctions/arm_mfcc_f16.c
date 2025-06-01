@@ -85,7 +85,7 @@ void arm_mfcc_f16(
   )
 {
   float16_t maxValue;
-  uint32_t  index; 
+  uint32_t  index;
   uint32_t i;
   float16_t result;
   const float16_t *coefs=S->filterCoefs;
@@ -99,14 +99,14 @@ void arm_mfcc_f16(
   /* Multiply by window */
   arm_mult_f16(pSrc,S->windowCoefs,pSrc,S->fftLen);
 
-  /* Compute spectrum magnitude 
+  /* Compute spectrum magnitude
   */
 #if defined(ARM_MFCC_CFFT_BASED)
   /* some HW accelerator for CMSIS-DSP used in some boards
      are only providing acceleration for CFFT.
      With ARM_MFCC_CFFT_BASED enabled, CFFT is used and the MFCC
      will be accelerated on those boards.
- 
+
      The default is to use RFFT
   */
   /* Convert from real to complex */
@@ -151,7 +151,7 @@ void arm_mfcc_f16(
   pDctMat.pData=(float16_t*)S->dctCoefs;
 
   arm_mat_vec_mult_f16(&pDctMat, pTmp, pDst);
-      
+
 
 }
 

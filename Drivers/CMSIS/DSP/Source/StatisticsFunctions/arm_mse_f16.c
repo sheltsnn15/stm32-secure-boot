@@ -60,8 +60,8 @@ void arm_mse_f16(
 {
     float16x8_t vecA, vecB;
     float16x8_t vecSum;
-    uint32_t blkCnt; 
-    _Float16 sum = 0.0f16;  
+    uint32_t blkCnt;
+    _Float16 sum = 0.0f16;
     vecSum = vdupq_n_f16(0.0f16);
 
     blkCnt = (blockSize) >> 3;
@@ -69,7 +69,7 @@ void arm_mse_f16(
     {
         vecA = vld1q(pSrcA);
         pSrcA += 8;
-        
+
         vecB = vld1q(pSrcB);
         pSrcB += 8;
 
@@ -126,45 +126,45 @@ void arm_mse_f16(
 #if defined (ARM_MATH_LOOPUNROLL)
   blkCnt = (blockSize) >> 3;
 
- 
+
   while (blkCnt > 0U)
   {
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;
@@ -173,7 +173,7 @@ void arm_mse_f16(
     blkCnt--;
   }
 
-  
+
   /* Loop unrolling: Compute remaining outputs */
   blkCnt = (blockSize) & 7;
 #else
@@ -182,7 +182,7 @@ void arm_mse_f16(
 #endif
   while (blkCnt > 0U)
   {
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = (_Float16)inA - (_Float16)inB;
     sum += (_Float16)inA * (_Float16)inA;

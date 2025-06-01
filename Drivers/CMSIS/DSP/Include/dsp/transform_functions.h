@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _TRANSFORM_FUNCTIONS_H_
 #define _TRANSFORM_FUNCTIONS_H_
 
@@ -313,7 +313,7 @@ void arm_cfft_q31(
   arm_status arm_cfft_init_f64(
   arm_cfft_instance_f64 * S,
   uint16_t fftLen);
-  
+
   void arm_cfft_f64(
   const arm_cfft_instance_f64 * S,
         float64_t * p1,
@@ -589,10 +589,10 @@ arm_status arm_rfft_fast_init_f32 (
 typedef struct
   {
      const float32_t *dctCoefs; /**< Internal DCT coefficients */
-     const float32_t *filterCoefs; /**< Internal Mel filter coefficients */ 
-     const float32_t *windowCoefs; /**< Windowing coefficients */ 
-     const uint32_t *filterPos; /**< Internal Mel filter positions in spectrum */ 
-     const uint32_t *filterLengths; /**< Internal Mel filter  lengths */ 
+     const float32_t *filterCoefs; /**< Internal Mel filter coefficients */
+     const float32_t *windowCoefs; /**< Windowing coefficients */
+     const uint32_t *filterPos; /**< Internal Mel filter positions in spectrum */
+     const uint32_t *filterLengths; /**< Internal Mel filter  lengths */
      uint32_t fftLen; /**< FFT length */
      uint32_t nbMelFilters; /**< Number of Mel filters */
      uint32_t nbDctOutputs; /**< Number of DCT outputs */
@@ -636,10 +636,10 @@ arm_status arm_mfcc_init_f32(
 typedef struct
   {
      const q31_t *dctCoefs; /**< Internal DCT coefficients */
-     const q31_t *filterCoefs; /**< Internal Mel filter coefficients */ 
-     const q31_t *windowCoefs; /**< Windowing coefficients */ 
-     const uint32_t *filterPos; /**< Internal Mel filter positions in spectrum */ 
-     const uint32_t *filterLengths; /**< Internal Mel filter  lengths */ 
+     const q31_t *filterCoefs; /**< Internal Mel filter coefficients */
+     const q31_t *windowCoefs; /**< Windowing coefficients */
+     const uint32_t *filterPos; /**< Internal Mel filter positions in spectrum */
+     const uint32_t *filterLengths; /**< Internal Mel filter  lengths */
      uint32_t fftLen; /**< FFT length */
      uint32_t nbMelFilters; /**< Number of Mel filters */
      uint32_t nbDctOutputs; /**< Number of DCT outputs */
@@ -683,10 +683,10 @@ arm_status arm_mfcc_init_q31(
 typedef struct
   {
      const q15_t *dctCoefs; /**< Internal DCT coefficients */
-     const q15_t *filterCoefs; /**< Internal Mel filter coefficients */ 
-     const q15_t *windowCoefs; /**< Windowing coefficients */ 
-     const uint32_t *filterPos; /**< Internal Mel filter positions in spectrum */ 
-     const uint32_t *filterLengths; /**< Internal Mel filter  lengths */ 
+     const q15_t *filterCoefs; /**< Internal Mel filter coefficients */
+     const q15_t *windowCoefs; /**< Windowing coefficients */
+     const uint32_t *filterPos; /**< Internal Mel filter positions in spectrum */
+     const uint32_t *filterLengths; /**< Internal Mel filter  lengths */
      uint32_t fftLen; /**< FFT length */
      uint32_t nbMelFilters; /**< Number of Mel filters */
      uint32_t nbDctOutputs; /**< Number of DCT outputs */

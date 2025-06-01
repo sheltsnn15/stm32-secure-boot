@@ -80,7 +80,7 @@ void arm_absmax_f16(
     blkCnt = blockSize >> 3;
     while (blkCnt > 0U)
     {
-        vecSrc = vldrhq_f16(pSrcVec);  
+        vecSrc = vldrhq_f16(pSrcVec);
         pSrcVec += 8;
         vecSrc = vabsq(vecSrc);
         /*
@@ -104,7 +104,7 @@ void arm_absmax_f16(
     blkCnt = blockSize & 7;
     if (blkCnt > 0U)
     {
-        vecSrc = vldrhq_f16(pSrcVec);  
+        vecSrc = vldrhq_f16(pSrcVec);
         pSrcVec += 8;
         vecSrc = vabsq(vecSrc);
 
@@ -222,7 +222,7 @@ void arm_absmax_f16(
                                                                                                             \
   /* Store the extrema value and it's index into destination pointers */                                    \
   *pResult = out;                                                                                           \
-  *pIndex = outIndex;  
+  *pIndex = outIndex;
 }
 #else
 void arm_absmax_f16(
@@ -270,5 +270,4 @@ void arm_absmax_f16(
   @} end of AbsMax group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

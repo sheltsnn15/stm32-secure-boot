@@ -892,4 +892,3 @@ uint32_t HAL_SAI_GetError(const SAI_HandleTypeDef *hsai);
 #endif
 
 #endif /* __STM32F4xx_HAL_SAI_H */
-

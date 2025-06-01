@@ -908,7 +908,7 @@ HAL_StatusTypeDef HAL_QSPI_Command_IT(QSPI_HandleTypeDef *hqspi, QSPI_CommandTyp
     hqspi->State = HAL_QSPI_STATE_BUSY;
 
     /* Wait till BUSY flag reset */
-    status = QSPI_WaitFlagStateUntilTimeout_CPUCycle(hqspi, QSPI_FLAG_BUSY, RESET, hqspi->Timeout);	
+    status = QSPI_WaitFlagStateUntilTimeout_CPUCycle(hqspi, QSPI_FLAG_BUSY, RESET, hqspi->Timeout);
 
     if (status == HAL_OK)
     {
@@ -1795,7 +1795,7 @@ HAL_StatusTypeDef HAL_QSPI_AutoPolling_IT(QSPI_HandleTypeDef *hqspi, QSPI_Comman
     hqspi->State = HAL_QSPI_STATE_BUSY_AUTO_POLLING;
 
     /* Wait till BUSY flag reset */
-    status = QSPI_WaitFlagStateUntilTimeout_CPUCycle(hqspi, QSPI_FLAG_BUSY, RESET, hqspi->Timeout);	
+    status = QSPI_WaitFlagStateUntilTimeout_CPUCycle(hqspi, QSPI_FLAG_BUSY, RESET, hqspi->Timeout);
 
     if (status == HAL_OK)
     {
@@ -2380,14 +2380,14 @@ HAL_StatusTypeDef HAL_QSPI_Abort(QSPI_HandleTypeDef *hqspi)
     {
       /* Configure QSPI: CR register with Abort request */
       SET_BIT(hqspi->Instance->CR, QUADSPI_CR_ABORT);
-      
+
       /* Wait until TC flag is set to go back in idle state */
       status = QSPI_WaitFlagStateUntilTimeout(hqspi, QSPI_FLAG_TC, SET, tickstart, hqspi->Timeout);
-      
+
       if (status == HAL_OK)
       {
         __HAL_QSPI_CLEAR_FLAG(hqspi, QSPI_FLAG_TC);
-        
+
         /* Wait until BUSY flag is reset */
         status = QSPI_WaitFlagStateUntilTimeout(hqspi, QSPI_FLAG_BUSY, RESET, tickstart, hqspi->Timeout);
       }
@@ -2396,7 +2396,7 @@ HAL_StatusTypeDef HAL_QSPI_Abort(QSPI_HandleTypeDef *hqspi)
       {
         /* Reset functional mode configuration to indirect write mode by default */
         CLEAR_BIT(hqspi->Instance->CCR, QUADSPI_CCR_FMODE);
-        
+
         /* Update state */
         hqspi->State = HAL_QSPI_STATE_READY;
       }
@@ -2458,13 +2458,13 @@ HAL_StatusTypeDef HAL_QSPI_Abort_IT(QSPI_HandleTypeDef *hqspi)
       {
         /* Clear interrupt */
         __HAL_QSPI_CLEAR_FLAG(hqspi, QSPI_FLAG_TC);
-        
+
         /* Enable the QSPI Transfer Complete Interrupt */
         __HAL_QSPI_ENABLE_IT(hqspi, QSPI_IT_TC);
-        
+
         /* Configure QSPI: CR register with Abort request */
         SET_BIT(hqspi->Instance->CR, QUADSPI_CR_ABORT);
-      }    
+      }
       else
       {
         /* Change state of QSPI */
@@ -2739,7 +2739,7 @@ static HAL_StatusTypeDef QSPI_WaitFlagStateUntilTimeout(QSPI_HandleTypeDef *hqsp
   * @retval HAL status
   */
 static HAL_StatusTypeDef QSPI_WaitFlagStateUntilTimeout_CPUCycle(QSPI_HandleTypeDef *hqspi, uint32_t Flag, FlagStatus State, uint32_t Timeout)
-{ 
+{
   __IO uint32_t count = Timeout * (SystemCoreClock / 16U / 1000U);
    do
    {
@@ -2751,8 +2751,8 @@ static HAL_StatusTypeDef QSPI_WaitFlagStateUntilTimeout_CPUCycle(QSPI_HandleType
      }
    }
    while ((__HAL_QSPI_GET_FLAG(hqspi, Flag)) != State);
-   
-   return HAL_OK;   
+
+   return HAL_OK;
 }
 
 /**

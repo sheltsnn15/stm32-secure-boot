@@ -38,7 +38,7 @@ extern "C"
 #endif
 
 
- 
+
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE)
 
@@ -106,4 +106,3 @@ extern float16_t rearranged_twiddle_stride3_4096_f16[2728];
 #endif
 
 #endif /*_ARM_MVE_TABLES_F16_H*/
-

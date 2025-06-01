@@ -108,18 +108,18 @@ void arm_mat_vec_mult_f16(
         {
             f16x8_t vecA;
 
-            vecIn = vld1q(pInVec);      
+            vecIn = vld1q(pInVec);
             pInVec += 8;
-            vecA = vld1q(pSrcA0Vec);    
+            vecA = vld1q(pSrcA0Vec);
             pSrcA0Vec += 8;
             acc0 = vfmaq(acc0, vecIn, vecA);
-            vecA = vld1q(pSrcA1Vec);  
+            vecA = vld1q(pSrcA1Vec);
             pSrcA1Vec += 8;
             acc1 = vfmaq(acc1, vecIn, vecA);
-            vecA = vld1q(pSrcA2Vec);  
+            vecA = vld1q(pSrcA2Vec);
             pSrcA2Vec += 8;
             acc2 = vfmaq(acc2, vecIn, vecA);
-            vecA = vld1q(pSrcA3Vec);  
+            vecA = vld1q(pSrcA3Vec);
             pSrcA3Vec += 8;
             acc3 = vfmaq(acc3, vecIn, vecA);
 
@@ -191,12 +191,12 @@ void arm_mat_vec_mult_f16(
         {
             f16x8_t vecA;
 
-            vecIn = vld1q(pInVec);      
+            vecIn = vld1q(pInVec);
             pInVec += 8;
-            vecA = vld1q(pSrcA0Vec);    
+            vecA = vld1q(pSrcA0Vec);
             pSrcA0Vec += 8;
             acc0 = vfmaq(acc0, vecIn, vecA);
-            vecA = vld1q(pSrcA1Vec);    
+            vecA = vld1q(pSrcA1Vec);
             pSrcA1Vec += 8;
             acc1 = vfmaq(acc1, vecIn, vecA);
 
@@ -253,9 +253,9 @@ void arm_mat_vec_mult_f16(
         {
             f16x8_t vecA;
 
-            vecIn = vld1q(pInVec);      
+            vecIn = vld1q(pInVec);
             pInVec += 8;
-            vecA = vld1q(pSrcA0Vec);    
+            vecA = vld1q(pSrcA0Vec);
             pSrcA0Vec += 8;
             acc0 = vfmaq(acc0, vecIn, vecA);
 
@@ -392,5 +392,4 @@ void arm_mat_vec_mult_f16(const arm_matrix_instance_f16 *pSrcMat, const float16_
  * @} end of MatrixMult group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

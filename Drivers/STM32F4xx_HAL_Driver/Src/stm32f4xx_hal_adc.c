@@ -2107,4 +2107,3 @@ static void ADC_DMAError(DMA_HandleTypeDef *hdma)
 /**
   * @}
   */
-

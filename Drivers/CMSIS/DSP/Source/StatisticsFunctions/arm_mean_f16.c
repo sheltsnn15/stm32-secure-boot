@@ -148,5 +148,4 @@ void arm_mean_f16(
   @} end of mean group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

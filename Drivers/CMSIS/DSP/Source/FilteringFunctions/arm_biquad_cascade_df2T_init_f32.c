@@ -39,7 +39,7 @@
 
 
 
-#if defined(ARM_MATH_NEON) 
+#if defined(ARM_MATH_NEON)
 /**
   @brief         Compute new coefficient arrays for use in vectorized filter (Neon only).
   @param[in]     numStages         number of 2nd order stages in the filter.
@@ -48,7 +48,7 @@
   @return        none
 
   @par   Size of coefficient arrays:
-            pCoeffs has size 5 * numStages 
+            pCoeffs has size 5 * numStages
 
             pComputedCoeffs has size 8 * numStages
 
@@ -63,7 +63,7 @@ void arm_biquad_cascade_df2T_compute_coefs_f32(
    uint8_t cnt;
    float32_t b0[4],b1[4],b2[4],a1[4],a2[4];
 
-   cnt = numStages >> 2; 
+   cnt = numStages >> 2;
    while(cnt > 0)
    {
       for(int i=0;i<4;i++)
@@ -93,7 +93,7 @@ void arm_biquad_cascade_df2T_compute_coefs_f32(
       *pComputedCoeffs++ = 0;
       *pComputedCoeffs++ = 0;
       *pComputedCoeffs++ = b0[1] * b0[2] * b0[3];
-      
+
       /* Vec 4 */
       *pComputedCoeffs++ = b0[0];
       *pComputedCoeffs++ = b0[0] * b0[1];
@@ -139,7 +139,7 @@ void arm_biquad_cascade_df2T_compute_coefs_f32(
    }
 
 }
-#endif 
+#endif
 
 /**
   @brief         Initialization function for the floating-point transposed direct form II Biquad cascade filter.
@@ -155,7 +155,7 @@ void arm_biquad_cascade_df2T_compute_coefs_f32(
   <pre>
       {b10, b11, b12, a11, a12, b20, b21, b22, a21, a22, ...}
   </pre>
-                   
+
   @par
                    where <code>b1x</code> and <code>a1x</code> are the coefficients for the first stage,
                    <code>b2x</code> and <code>a2x</code> are the coefficients for the second stage,

@@ -98,7 +98,7 @@ arm_status arm_mfcc_init_q15(
  #else
  status=arm_rfft_init_q15(&(S->rfft),fftLen,0,1);
  #endif
- 
+
  return(status);
 }
 

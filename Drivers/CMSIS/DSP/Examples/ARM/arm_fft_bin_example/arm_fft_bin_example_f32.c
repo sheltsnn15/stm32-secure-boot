@@ -145,7 +145,7 @@ int32_t main(void)
   arm_max_f32(testOutput, fftSize, &maxValue, &testIndex);
 
   status = (testIndex != refIndex) ? ARM_MATH_TEST_FAILURE : ARM_MATH_SUCCESS;
-  
+
   if (status != ARM_MATH_SUCCESS)
   {
 #if defined (SEMIHOSTING)

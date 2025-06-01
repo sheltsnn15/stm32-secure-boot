@@ -56,8 +56,8 @@
 #include "arm_helium_utils.h"
 #include "arm_vec_math_f16.h"
 
-uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_instance_f16 *S, 
-   const float16_t * in, 
+uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_instance_f16 *S,
+   const float16_t * in,
    float16_t *pOutputProbabilities,
    float16_t *pBufferB
    )
@@ -142,8 +142,8 @@ uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_ins
 
 #else
 
-uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_instance_f16 *S, 
-   const float16_t * in, 
+uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_instance_f16 *S,
+   const float16_t * in,
    float16_t *pOutputProbabilities,
    float16_t *pBufferB)
 {
@@ -167,7 +167,7 @@ uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_ins
     for(nbClass = 0; nbClass < S->numberOfClasses; nbClass++)
     {
 
-        
+
         pIn = in;
 
         tmp = 0.0f16;
@@ -203,5 +203,4 @@ uint32_t arm_gaussian_naive_bayes_predict_f16(const arm_gaussian_naive_bayes_ins
  * @} end of groupBayes group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

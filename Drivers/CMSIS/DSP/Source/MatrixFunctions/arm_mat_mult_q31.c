@@ -546,10 +546,10 @@ arm_status arm_mat_mult_q31(
             q63_t          acc0;
 
             acc0 = 0LL;
-           
+
 
             pSrcA0Vec = (q31_t const *) pInA0;
-           
+
             vecOffs = vecColBOffs;
 
             /* process 1 x 4 block output */
@@ -564,7 +564,7 @@ arm_status arm_mat_mult_q31(
 
                 vecA = vld1q(pSrcA0Vec);  pSrcA0Vec += 4;
                 acc0 = vrmlaldavhaq(acc0, vecA, vecB);
-              
+
                 blkCnt--;
             }
 
@@ -581,14 +581,14 @@ arm_status arm_mat_mult_q31(
                 vecB = vldrwq_gather_shifted_offset_z(pInB, vecOffs, p0);
                 //vecOffs = vecOffs + (uint32_t) (numColsB * 4);
 
-                vecA = vld1q(pSrcA0Vec);  
+                vecA = vld1q(pSrcA0Vec);
                 pSrcA0Vec += 4;
                 acc0 = vrmlaldavhaq(acc0, vecA, vecB);
-                
+
             }
 
             acc0 = asrl(acc0, 23);
-           
+
 
             px[0] = (q31_t) acc0;
             px++;

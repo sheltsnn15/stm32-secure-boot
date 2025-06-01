@@ -86,7 +86,7 @@ void arm_absmin_f32(
     blkCnt = blockSize >> 2;
     while (blkCnt > 0)
     {
-        vecSrc = vldrwq_f32(pSrcVec);  
+        vecSrc = vldrwq_f32(pSrcVec);
         pSrcVec += 4;
         vecSrc = vabsq(vecSrc);
         /*
@@ -112,7 +112,7 @@ void arm_absmin_f32(
     {
         p0 = vctp32q(blkCnt);
 
-        vecSrc = vldrwq_f32(pSrcVec);  
+        vecSrc = vldrwq_f32(pSrcVec);
         pSrcVec += 4;
         vecSrc = vabsq(vecSrc);
         /*
@@ -229,7 +229,7 @@ void arm_absmin_f32(
                                                                                                             \
   /* Store the extrema value and it's index into destination pointers */                                    \
   *pResult = out;                                                                                           \
-  *pIndex = outIndex;  
+  *pIndex = outIndex;
 }
 #else
 void arm_absmin_f32(

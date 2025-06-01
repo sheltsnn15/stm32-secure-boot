@@ -1129,4 +1129,3 @@ static HAL_StatusTypeDef I2SEx_FullDuplexWaitFlagStateUntilTimeout(I2S_HandleTyp
 /**
   * @}
   */
-

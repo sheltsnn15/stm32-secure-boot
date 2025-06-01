@@ -167,7 +167,7 @@ int32_t main(void)
 
   /* Comparison of dot product value with reference */
   status = (diff > DELTA) ? ARM_MATH_TEST_FAILURE : ARM_MATH_SUCCESS;
-  
+
   if (status != ARM_MATH_SUCCESS)
   {
 #if defined (SEMIHOSTING)

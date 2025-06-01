@@ -224,7 +224,7 @@ void arm_cmplx_dot_prod_f32(
 
         vec3 = vld2q_f32(pSrcA);
         vec4 = vld2q_f32(pSrcB);
-	
+
 	/* Increment pointers */
         pSrcA += 8;
         pSrcB += 8;

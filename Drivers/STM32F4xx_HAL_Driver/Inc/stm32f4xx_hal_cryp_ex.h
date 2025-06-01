@@ -139,4 +139,3 @@ void  HAL_CRYPEx_DisableAutoKeyDerivation(CRYP_HandleTypeDef *hcryp);
 #endif
 
 #endif /* __STM32F4xx_HAL_CRYP_EX_H */
-

@@ -110,7 +110,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
        tmp = *pIn++;
        accum += expf(tmp - maxVal);
        blkCnt--;
-    
+
     }
 
     accum = maxVal + logf(accum);
@@ -135,7 +135,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
     const float32_t *pIn;
     uint32_t blkCnt;
     float32_t accum;
- 
+
     pIn = in;
 
     blkCnt = blockSize;
@@ -148,7 +148,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
       while(blkCnt > 0)
       {
          tmp = *pIn++;
-  
+
          if (tmp > maxVal)
          {
             maxVal = tmp;
@@ -166,7 +166,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
       {
          tmpVb = vld1q_f32(pIn);
          pIn += 4;
-  
+
          idxV = vcgtq_f32(tmpVb, maxValV);
          maxValV = vbslq_f32(idxV, tmpVb, maxValV );
 
@@ -182,7 +182,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
       while(blkCnt > 0)
       {
          tmp = *pIn++;
-  
+
          if (tmp > maxVal)
          {
             maxVal = tmp;
@@ -192,7 +192,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
 
     }
 
-    
+
 
     maxValV = vdupq_n_f32(maxVal);
     pIn = in;
@@ -210,7 +210,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
        accumV = vaddq_f32(accumV, tmpV);
 
        blkCnt--;
-    
+
     }
     accumV2 = vpadd_f32(vget_low_f32(accumV),vget_high_f32(accumV));
     accum = vget_lane_f32(accumV2, 0) + vget_lane_f32(accumV2, 1);
@@ -221,7 +221,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
        tmp = *pIn++;
        accum += expf(tmp - maxVal);
        blkCnt--;
-    
+
     }
 
     accum = maxVal + logf(accum);
@@ -236,7 +236,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
     const float32_t *pIn;
     uint32_t blkCnt;
     float32_t accum;
- 
+
     pIn = in;
     blkCnt = blockSize;
 
@@ -252,7 +252,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
           maxVal = tmp;
        }
        blkCnt--;
-    
+
     }
 
     blkCnt = blockSize;
@@ -263,7 +263,7 @@ float32_t arm_logsumexp_f32(const float32_t *in, uint32_t blockSize)
        tmp = *pIn++;
        accum += expf(tmp - maxVal);
        blkCnt--;
-    
+
     }
     accum = maxVal + logf(accum);
 

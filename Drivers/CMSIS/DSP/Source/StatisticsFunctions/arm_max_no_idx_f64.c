@@ -56,17 +56,17 @@ void arm_max_no_idx_f64(
    while (blockSize > 0U)
    {
        newVal = *pSrc++;
-   
+
        /* compare for the maximum value */
        if (maxValue < newVal)
        {
            /* Update the maximum value and it's index */
            maxValue = newVal;
        }
-   
+
        blockSize --;
    }
-    
+
    *pResult = maxValue;
 }
 

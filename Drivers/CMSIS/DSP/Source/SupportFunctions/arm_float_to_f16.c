@@ -51,7 +51,7 @@
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) && defined(__CMSIS_GCC_H)
 #pragma GCC warning "Scalar version of arm_float_to_f16 built. Helium version has build issues with gcc."
-#endif 
+#endif
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) &&  !defined(__CMSIS_GCC_H)
 
@@ -127,5 +127,4 @@ void arm_float_to_f16(
   @} end of float_to_x group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

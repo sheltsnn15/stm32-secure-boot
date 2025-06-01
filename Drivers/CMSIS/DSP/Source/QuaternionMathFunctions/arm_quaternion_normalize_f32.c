@@ -56,8 +56,8 @@
 
 #include "arm_helium_utils.h"
 
-void arm_quaternion_normalize_f32(const float32_t *pInputQuaternions, 
-    float32_t *pNormalizedQuaternions, 
+void arm_quaternion_normalize_f32(const float32_t *pInputQuaternions,
+    float32_t *pNormalizedQuaternions,
     uint32_t nbQuaternions)
 {
    f32x4_t vec1,vec2;
@@ -79,8 +79,8 @@ void arm_quaternion_normalize_f32(const float32_t *pInputQuaternions,
 }
 
 #else
-void arm_quaternion_normalize_f32(const float32_t *pInputQuaternions, 
-    float32_t *pNormalizedQuaternions, 
+void arm_quaternion_normalize_f32(const float32_t *pInputQuaternions,
+    float32_t *pNormalizedQuaternions,
     uint32_t nbQuaternions)
 {
    float32_t temp;

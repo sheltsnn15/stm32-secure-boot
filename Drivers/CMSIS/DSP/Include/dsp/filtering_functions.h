@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _FILTERING_FUNCTIONS_H_
 #define _FILTERING_FUNCTIONS_H_
 
@@ -49,7 +49,7 @@ extern "C"
 /**
  * @defgroup groupFilters Filtering Functions
  */
-    
+
   /**
    * @brief Instance structure for the Q7 FIR filter.
    */
@@ -319,7 +319,7 @@ extern "C"
   {
       float32_t coeffs[8][4]; /**< Points to the array of modified coefficients.  The array is of length 32. There is one per stage */
   } arm_biquad_mod_coef_f32;
-#endif 
+#endif
 
   /**
    * @brief Processing function for the Q15 Biquad cascade filter.
@@ -428,11 +428,11 @@ extern "C"
   void arm_biquad_cascade_df1_mve_init_f32(
       arm_biquad_casd_df1_inst_f32 * S,
       uint8_t numStages,
-      const float32_t * pCoeffs, 
-      arm_biquad_mod_coef_f32 * pCoeffsMod, 
+      const float32_t * pCoeffs,
+      arm_biquad_mod_coef_f32 * pCoeffsMod,
       float32_t * pState);
 #endif
-  
+
   void arm_biquad_cascade_df1_init_f32(
         arm_biquad_casd_df1_inst_f32 * S,
         uint8_t numStages,
@@ -1210,7 +1210,7 @@ arm_status arm_fir_decimate_init_f32(
         uint32_t blockSize);
 
 
-#if defined(ARM_MATH_NEON) 
+#if defined(ARM_MATH_NEON)
 /**
   @brief         Compute new coefficient arrays for use in vectorized filter (Neon only).
   @param[in]     numStages         number of 2nd order stages in the filter.
@@ -2190,7 +2190,7 @@ void arm_correlate_fast_q31(
 
 
 
- 
+
 
   /**
    * @brief floating-point Circular write function.
@@ -2504,7 +2504,7 @@ void arm_correlate_fast_q31(
   @return        none
  */
 void arm_levinson_durbin_f32(const float32_t *phi,
-  float32_t *a, 
+  float32_t *a,
   float32_t *err,
   int nbCoefs);
 
@@ -2518,7 +2518,7 @@ void arm_levinson_durbin_f32(const float32_t *phi,
   @return        none
  */
 void arm_levinson_durbin_q31(const q31_t *phi,
-  q31_t *a, 
+  q31_t *a,
   q31_t *err,
   int nbCoefs);
 

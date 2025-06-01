@@ -97,7 +97,7 @@ void arm_mse_q31(
         sum = vrmlaldavhaq_p(sum, vecSrcA, vecSrcA, p0);
     }
 
-    
+
     *pResult = (q31_t) ((sum / blockSize)>>21);
 
 }

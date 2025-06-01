@@ -95,7 +95,7 @@ arm_status arm_mat_cholesky_f16(
 
     pA = pSrc->pData;
     pG = pDst->pData;
-    
+
     for(i=0 ;i < n ; i++)
     {
        for(j=i ; j+3 < n ; j+=4)
@@ -118,7 +118,7 @@ arm_status arm_mat_cholesky_f16(
              p0 = vctp16q(kCnt);
 
              vecGi=vldrhq_z_f16(&pG[i * n + k],p0);
-             
+
              vecGj0=vldrhq_z_f16(&pG[(j + 0) * n + k],p0);
              vecGj1=vldrhq_z_f16(&pG[(j + 1) * n + k],p0);
              vecGj2=vldrhq_z_f16(&pG[(j + 2) * n + k],p0);
@@ -174,7 +174,7 @@ arm_status arm_mat_cholesky_f16(
 
   }
 
-  
+
   /* Return to application */
   return (status);
 }
@@ -210,7 +210,7 @@ arm_status arm_mat_cholesky_f16(
 
     pA = pSrc->pData;
     pG = pDst->pData;
-    
+
 
     for(i=0 ; i < n ; i++)
     {
@@ -243,7 +243,7 @@ arm_status arm_mat_cholesky_f16(
 
   }
 
-  
+
   /* Return to application */
   return (status);
 }
@@ -253,4 +253,4 @@ arm_status arm_mat_cholesky_f16(
 /**
   @} end of MatrixChol group
  */
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

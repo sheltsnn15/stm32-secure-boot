@@ -113,7 +113,7 @@ float16_t arm_logsumexp_f16(const float16_t *in, uint32_t blockSize)
        tmp = *pIn++;
        accum += (_Float16)expf((float32_t)((_Float16)tmp - (_Float16)maxVal));
        blkCnt--;
-    
+
     }
 
     accum = (_Float16)maxVal + (_Float16)logf((float32_t)accum);
@@ -129,7 +129,7 @@ float16_t arm_logsumexp_f16(const float16_t *in, uint32_t blockSize)
     const float16_t *pIn;
     uint32_t blkCnt;
     _Float16 accum;
- 
+
     pIn = in;
     blkCnt = blockSize;
 
@@ -145,7 +145,7 @@ float16_t arm_logsumexp_f16(const float16_t *in, uint32_t blockSize)
           maxVal = tmp;
        }
        blkCnt--;
-    
+
     }
 
     blkCnt = blockSize;
@@ -156,7 +156,7 @@ float16_t arm_logsumexp_f16(const float16_t *in, uint32_t blockSize)
        tmp = *pIn++;
        accum += (_Float16)expf((float32_t)((_Float16)tmp - (_Float16)maxVal));
        blkCnt--;
-    
+
     }
     accum = (_Float16)maxVal + (_Float16)logf((float32_t)accum);
 
@@ -168,5 +168,4 @@ float16_t arm_logsumexp_f16(const float16_t *in, uint32_t blockSize)
  * @} end of LogSumExp group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

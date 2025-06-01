@@ -59,7 +59,7 @@
   @remark
                    Refer to \ref arm_mat_mult_fast_q31() for a faster but less precise implementation of this function.
   @remark
-                   This function is a faster implementation of arm_mat_mult_q31 for MVE but it is requiring 
+                   This function is a faster implementation of arm_mat_mult_q31 for MVE but it is requiring
                    additional storage for intermediate results.
  */
 #if defined(ARM_MATH_MVEI) && !defined(ARM_MATH_AUTOVECTORIZE)

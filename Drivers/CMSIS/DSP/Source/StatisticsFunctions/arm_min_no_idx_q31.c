@@ -66,7 +66,7 @@ void arm_min_no_idx_q31(
     blkCnt = blockSize >> 2;
     while (blkCnt > 0)
     {
-        vecSrc = vldrwq_s32(pSrcVec);  
+        vecSrc = vldrwq_s32(pSrcVec);
         pSrcVec += 4;
         /*
          * update per-lane min.
@@ -84,7 +84,7 @@ void arm_min_no_idx_q31(
     blkCnt = blockSize & 3;
     if (blkCnt > 0)
     {
-        vecSrc = vldrwq_s32(pSrcVec);  
+        vecSrc = vldrwq_s32(pSrcVec);
         pSrcVec += 4;
         p0 = vctp32q(blkCnt);
         /*
@@ -106,32 +106,32 @@ void arm_min_no_idx_q31(
         uint32_t blockSize,
         q31_t * pResult)
 {
-  q31_t minVal1, out;       /* Temporary variables to store the output value. */    
-  uint32_t blkCnt;              /* loop counter */                                  
-                                                                                    
-  /* Load first input value that act as reference value for comparision */          
-  out = *pSrc++;                                                                    
-                                                                                    
-  blkCnt = (blockSize - 1U);                                                        
-                                                                                    
-                                                                                    
-  while (blkCnt > 0U)                                                               
-  {                                                                                 
-    /* Initialize minVal to the next consecutive values one by one */               
-    minVal1 = *pSrc++;                                                              
-                                                                                    
-    /* compare for the minimum value */                                             
-    if (out > minVal1)                                                              
-    {                                                                               
-      /* Update the minimum value */                                                
-      out = minVal1;                                                                
-    }                                                                               
-                                                                                    
-    /* Decrement the loop counter */                                                
-    blkCnt--;                                                                       
-  }                                                                                 
-                                                                                    
-  /* Store the minimum value into destination pointer */                            
+  q31_t minVal1, out;       /* Temporary variables to store the output value. */
+  uint32_t blkCnt;              /* loop counter */
+
+  /* Load first input value that act as reference value for comparision */
+  out = *pSrc++;
+
+  blkCnt = (blockSize - 1U);
+
+
+  while (blkCnt > 0U)
+  {
+    /* Initialize minVal to the next consecutive values one by one */
+    minVal1 = *pSrc++;
+
+    /* compare for the minimum value */
+    if (out > minVal1)
+    {
+      /* Update the minimum value */
+      out = minVal1;
+    }
+
+    /* Decrement the loop counter */
+    blkCnt--;
+  }
+
+  /* Store the minimum value into destination pointer */
   *pResult = out;
 }
 

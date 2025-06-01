@@ -53,7 +53,7 @@
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) && defined(__CMSIS_GCC_H)
 #pragma GCC warning "Scalar version of arm_levinson_durbin_f32 built. Helium version has build issues with gcc."
-#endif 
+#endif
 
 #if defined(ARM_MATH_MVEF) && !defined(ARM_MATH_AUTOVECTORIZE) &&  !defined(__CMSIS_GCC_H)
 
@@ -62,7 +62,7 @@
 #define LANE23_MASK 0xFF00
 
 void arm_levinson_durbin_f32(const float32_t *phi,
-  float32_t *a, 
+  float32_t *a,
   float32_t *err,
   int nbCoefs)
 {
@@ -78,7 +78,7 @@ void arm_levinson_durbin_f32(const float32_t *phi,
       float32_t sumb = 0.0f;
       f32x4_t vecA,vecRevPhi,vecPhi,vecSumA, vecSumB;
       float32_t k;
-      uint32_t blkCnt; 
+      uint32_t blkCnt;
       const float32_t *pPhi,*pRevPhi,*pA;
       uint32x4_t revOffset;
 
@@ -145,7 +145,7 @@ void arm_levinson_durbin_f32(const float32_t *phi,
       j=0;
       for(int i = 0; i < nb ; i++)
       {
-          
+
           /*
             x0=a[j] - k * a[p-1-j];
             x1=a[j+1] - k * a[p-2-j];
@@ -161,18 +161,18 @@ void arm_levinson_durbin_f32(const float32_t *phi,
           uint64_t tmpa,tmpb;
           vecA = vldrwq_gather_shifted_offset_f32(a,offset);
 
-          
+
           tmpa = vgetq_lane_u64((uint64x2_t)vecA,0);
           tmpb = vgetq_lane_u64((uint64x2_t)vecA,1);
           vecRevA = (f32x4_t) vsetq_lane_u64(tmpb,(uint64x2_t)vecRevA,0);
           vecRevA = (f32x4_t) vsetq_lane_u64(tmpa,(uint64x2_t)vecRevA,1);
-          
+
 
           tmp = vsubq(vecA,vmulq_n_f32(vecRevA,k));
           vstrwq_scatter_shifted_offset_f32(a, offset, tmp);
 
           offset = vaddq(offset,offsetInc);
- 
+
           j+=2;
 
       }
@@ -218,7 +218,7 @@ void arm_levinson_durbin_f32(const float32_t *phi,
 
 #else
 void arm_levinson_durbin_f32(const float32_t *phi,
-  float32_t *a, 
+  float32_t *a,
   float32_t *err,
   int nbCoefs)
 {

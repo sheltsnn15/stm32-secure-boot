@@ -100,4 +100,3 @@
   /**
    * @} end of LinearInterpolate group
    */
-

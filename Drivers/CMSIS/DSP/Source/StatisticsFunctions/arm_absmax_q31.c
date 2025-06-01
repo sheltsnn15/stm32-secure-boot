@@ -97,7 +97,7 @@ void arm_absmax_q31(
 
     indexVec = vpselq(extremIdxVec, vdupq_n_u32(blockSize - 1), p0);
     *pIndex = vminvq(blockSize - 1, indexVec);
-    *pResult = maxValue;  
+    *pResult = maxValue;
 }
 #else
 #if defined(ARM_MATH_DSP)
@@ -185,7 +185,7 @@ void arm_absmax_q31(
                                                                                                             \
   /* Store the extrema value and it's index into destination pointers */                                    \
   *pResult = out;                                                                                           \
-  *pIndex = outIndex;  
+  *pIndex = outIndex;
 }
 #else
 void arm_absmax_q31(

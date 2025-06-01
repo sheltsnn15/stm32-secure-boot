@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _TRANSFORM_FUNCTIONS_F16_H_
 #define _TRANSFORM_FUNCTIONS_F16_H_
 
@@ -154,10 +154,10 @@ arm_status arm_rfft_fast_init_f16 (
 typedef struct
   {
      const float16_t *dctCoefs; /**< Internal DCT coefficients */
-     const float16_t *filterCoefs; /**< Internal Mel filter coefficients */ 
-     const float16_t *windowCoefs; /**< Windowing coefficients */ 
-     const uint32_t *filterPos; /**< Internal Mel filter positions in spectrum */ 
-     const uint32_t *filterLengths; /**< Internal Mel filter  lengths */ 
+     const float16_t *filterCoefs; /**< Internal Mel filter coefficients */
+     const float16_t *windowCoefs; /**< Windowing coefficients */
+     const uint32_t *filterPos; /**< Internal Mel filter positions in spectrum */
+     const uint32_t *filterLengths; /**< Internal Mel filter  lengths */
      uint32_t fftLen; /**< FFT length */
      uint32_t nbMelFilters; /**< Number of Mel filters */
      uint32_t nbDctOutputs; /**< Number of DCT outputs */
@@ -198,7 +198,7 @@ arm_status arm_mfcc_init_f16(
   float16_t *pTmp
   );
 
-  
+
 #endif /* defined(ARM_FLOAT16_SUPPORTED)*/
 
 #ifdef   __cplusplus

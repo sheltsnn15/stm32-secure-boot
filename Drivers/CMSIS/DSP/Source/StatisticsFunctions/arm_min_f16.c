@@ -236,5 +236,4 @@ void arm_min_f16(
   @} end of Min group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

@@ -34,17 +34,17 @@ void arm_vlog_f64(
         float64_t * pDst,
         uint32_t blockSize)
 {
-   uint32_t blkCnt; 
+   uint32_t blkCnt;
 
    blkCnt = blockSize;
 
    while (blkCnt > 0U)
    {
       /* C = log(A) */
-  
+
       /* Calculate log and store result in destination buffer. */
       *pDst++ = log(*pSrc++);
-  
+
       /* Decrement loop counter */
       blkCnt--;
    }

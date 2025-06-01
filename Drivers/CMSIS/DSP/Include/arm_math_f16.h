@@ -55,5 +55,3 @@ extern "C"
 #endif
 
 #endif /* _ARM_MATH_F16_H */
-
-

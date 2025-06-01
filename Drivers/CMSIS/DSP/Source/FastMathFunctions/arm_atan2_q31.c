@@ -26,8 +26,8 @@
  * limitations under the License.
  */
 
-#include "dsp/fast_math_functions.h"        
-#include "dsp/utils.h"        
+#include "dsp/fast_math_functions.h"
+#include "dsp/utils.h"
 
 /*
 
@@ -98,9 +98,9 @@ __STATIC_FORCEINLINE q31_t arm_atan_q31(q31_t y,q31_t x)
     arm_divide_q31(x,y,&ratio,&shift);
 
     arm_shift_q31(&ratio,shift,&ratio,1);
-   
+
     res = PIHALF_Q29 - arm_atan_limited_q31(ratio);
-      
+
    }
    else
    {
@@ -141,7 +141,7 @@ __STATIC_FORCEINLINE q31_t arm_atan_q31(q31_t y,q31_t x)
   @param[in]   x  x coordinate
   @param[out]  result  Result in Q2.29
   @return  error status.
- 
+
   @par         Compute the Arc tangent of y/x:
                    The sign of y and x are used to determine the right quadrant
                    and compute the right angle.
@@ -191,7 +191,7 @@ arm_status arm_atan2_q31(q31_t y,q31_t x,q31_t *result)
             return(ARM_MATH_SUCCESS);
         }
     }
-    
+
 
     return(ARM_MATH_NANINF);
 

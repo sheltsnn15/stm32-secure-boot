@@ -59,7 +59,7 @@
  */
 
 
-#if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) 
+#if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE)
 
 #include "arm_helium_utils.h"
 
@@ -89,9 +89,9 @@ void arm_mult_f16(
 
         /* Increment pointers */
         pSrcA += 8;
-        pSrcB += 8; 
+        pSrcB += 8;
         pDst += 8;
-        
+
         /* Decrement the loop counter */
         blkCnt--;
     }

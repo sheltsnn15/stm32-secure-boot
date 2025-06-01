@@ -73,7 +73,7 @@ void arm_absmin_no_idx_f16(
     blkCnt = blockSize >> 3;
     while (blkCnt > 0)
     {
-        vecSrc = vld1q(pSrcVec); 
+        vecSrc = vld1q(pSrcVec);
         pSrcVec += 8;
         /*
          * update per-lane min.
@@ -91,7 +91,7 @@ void arm_absmin_no_idx_f16(
     blkCnt = blockSize & 7;
     if (blkCnt > 0)
     {
-        vecSrc = vld1q(pSrcVec); 
+        vecSrc = vld1q(pSrcVec);
         pSrcVec += 8;
         p0 = vctp16q(blkCnt);
         /*
@@ -226,5 +226,4 @@ void arm_absmin_no_idx_f16(
   @} end of AbsMin group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

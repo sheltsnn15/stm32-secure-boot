@@ -463,7 +463,7 @@ uint32_t UART_Control (const uint8_t *request, uint8_t *response) {
   if (UartTransport != DAP_UART_TRANSPORT_DAP_COMMAND) {
     ret = DAP_ERROR;
   } else {
- 
+
     control = *request;
 
     if ((control & DAP_UART_CONTROL_RX_DISABLE) != 0U) {
@@ -497,7 +497,7 @@ uint32_t UART_Control (const uint8_t *request, uint8_t *response) {
       } else {
         ret = DAP_ERROR;
       }
-    } 
+    }
     if ((control & DAP_UART_CONTROL_TX_BUF_FLUSH) != 0U) {
       UART_Transmit_Flush();
     }

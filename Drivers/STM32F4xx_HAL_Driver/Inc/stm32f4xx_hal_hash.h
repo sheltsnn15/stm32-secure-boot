@@ -643,4 +643,3 @@ HAL_StatusTypeDef HMAC_Start_DMA(HASH_HandleTypeDef *hhash, const uint8_t *const
 
 
 #endif /* STM32F4xx_HAL_HASH_H */
-

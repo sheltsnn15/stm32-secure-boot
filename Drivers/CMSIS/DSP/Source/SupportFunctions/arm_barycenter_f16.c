@@ -64,9 +64,9 @@
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE)
 
-void arm_barycenter_f16(const float16_t *in, 
-  const float16_t *weights, 
-  float16_t *out, 
+void arm_barycenter_f16(const float16_t *in,
+  const float16_t *weights,
+  float16_t *out,
   uint32_t nbVectors,
   uint32_t vecDim)
 {
@@ -95,7 +95,7 @@ void arm_barycenter_f16(const float16_t *in,
     pIn4 = pIn3 + vecDim;
 
     blkCntVector = nbVectors >> 2;
-    while (blkCntVector > 0) 
+    while (blkCntVector > 0)
     {
         f16x8_t         outV, inV1, inV2, inV3, inV4;
         float16_t       w1, w2, w3, w4;
@@ -150,7 +150,7 @@ void arm_barycenter_f16(const float16_t *in,
     pIn = pIn1;
 
     blkCntVector = nbVectors & 3;
-    while (blkCntVector > 0) 
+    while (blkCntVector > 0)
     {
         f16x8_t         inV, outV;
 
@@ -159,7 +159,7 @@ void arm_barycenter_f16(const float16_t *in,
         accum += (_Float16)w;
 
         blkCntSample = vecDim >> 3;
-        while (blkCntSample > 0) 
+        while (blkCntSample > 0)
         {
             outV = vld1q_f16(pOut);
             inV = vld1q_f16(pIn);
@@ -172,7 +172,7 @@ void arm_barycenter_f16(const float16_t *in,
         }
 
         blkCntSample = vecDim & 7;
-        while (blkCntSample > 0) 
+        while (blkCntSample > 0)
         {
             *pOut = (_Float16)*pOut + (_Float16)*pIn++ * (_Float16)w;
             pOut++;
@@ -187,7 +187,7 @@ void arm_barycenter_f16(const float16_t *in,
     accum = 1.0f16 / (_Float16)accum;
 
     blkCntSample = vecDim >> 3;
-    while (blkCntSample > 0) 
+    while (blkCntSample > 0)
     {
         f16x8_t         tmp;
 
@@ -199,7 +199,7 @@ void arm_barycenter_f16(const float16_t *in,
     }
 
     blkCntSample = vecDim & 7;
-    while (blkCntSample > 0) 
+    while (blkCntSample > 0)
     {
         *pOut = (_Float16)*pOut * (_Float16)accum;
         pOut++;
@@ -270,5 +270,4 @@ void arm_barycenter_f16(const float16_t *in, const float16_t *weights, float16_t
  * @} end of barycenter group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

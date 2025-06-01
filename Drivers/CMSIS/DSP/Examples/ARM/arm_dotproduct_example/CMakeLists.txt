@@ -10,13 +10,13 @@ set(DSP ${ROOT}/CMSIS/DSP)
 # Add DSP folder to module path
 list(APPEND CMAKE_MODULE_PATH ${DSP})
 
-################################### 
+###################################
 #
 # LIBRARIES
 #
 ###################################
 
-########### 
+###########
 #
 # CMSIS DSP
 #
@@ -24,7 +24,7 @@ list(APPEND CMAKE_MODULE_PATH ${DSP})
 add_subdirectory(../../../Source bin_dsp)
 
 
-################################### 
+###################################
 #
 # TEST APPLICATION
 #
@@ -42,4 +42,3 @@ target_sources(arm_dotproduct_example PRIVATE arm_dotproduct_example_f32.c)
 ### Sources and libs
 
 target_link_libraries(arm_dotproduct_example PRIVATE CMSISDSP)
-

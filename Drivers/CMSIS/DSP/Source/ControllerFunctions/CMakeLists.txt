@@ -14,7 +14,7 @@ include(interpol)
 interpol(CMSISDSPController)
 
 if (CONFIGTABLE AND ALLFAST)
-    target_compile_definitions(CMSISDSPController PUBLIC ARM_ALL_FAST_TABLES)  
+    target_compile_definitions(CMSISDSPController PUBLIC ARM_ALL_FAST_TABLES)
 endif()
 
 target_sources(CMSISDSPController PRIVATE arm_pid_init_f32.c)
@@ -36,6 +36,3 @@ endif()
 
 ### Includes
 target_include_directories(CMSISDSPController PUBLIC "${DSP}/Include")
-
-
-

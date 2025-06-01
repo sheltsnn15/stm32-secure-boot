@@ -1012,7 +1012,7 @@ HAL_StatusTypeDef HAL_IRDA_Receive_IT(IRDA_HandleTypeDef *hirda, uint8_t *pData,
     else
     {
       /* Enable the IRDA Data Register Not Empty Interrupts */
-       SET_BIT(hirda->Instance->CR1, USART_CR1_RXNEIE); 
+       SET_BIT(hirda->Instance->CR1, USART_CR1_RXNEIE);
     }
 
     /* Enable the IRDA Error Interrupt: (Frame error, Noise error, Overrun error) */
@@ -1258,7 +1258,7 @@ HAL_StatusTypeDef HAL_IRDA_DMAResume(IRDA_HandleTypeDef *hirda)
 
     /* Re-enable PE and ERR (Frame error, noise error, overrun error) interrupts */
     if (hirda->Init.Parity != IRDA_PARITY_NONE)
-    {    
+    {
       SET_BIT(hirda->Instance->CR1, USART_CR1_PEIE);
     }
     SET_BIT(hirda->Instance->CR3, USART_CR3_EIE);
@@ -2705,4 +2705,3 @@ static void IRDA_SetConfig(IRDA_HandleTypeDef *hirda)
 /**
   * @}
   */
-

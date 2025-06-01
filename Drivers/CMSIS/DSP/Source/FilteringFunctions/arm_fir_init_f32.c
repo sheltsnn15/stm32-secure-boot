@@ -56,7 +56,7 @@
                    <code>pState</code> is of length <code>numTaps+blockSize-1</code> samples (except for Helium - see below), where <code>blockSize</code> is the number of input samples processed by each call to <code>arm_fir_f32()</code>.
   @par          Initialization of Helium version
                  For Helium version the array of coefficients must be a multiple of 4 (4a) even if less
-                 then 4a coefficients are defined in the FIR. The additional coefficients 
+                 then 4a coefficients are defined in the FIR. The additional coefficients
                  (4a - numTaps) must be set to 0.
                  numTaps is still set to its right value in the init function. It means that
                  the implementation may require to read more coefficients due to the vectorization and

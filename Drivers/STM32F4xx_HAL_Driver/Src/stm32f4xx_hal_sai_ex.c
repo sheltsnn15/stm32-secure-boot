@@ -307,4 +307,3 @@ uint32_t SAI_GetInputClock(const SAI_HandleTypeDef *hsai)
 /**
   * @}
   */
-

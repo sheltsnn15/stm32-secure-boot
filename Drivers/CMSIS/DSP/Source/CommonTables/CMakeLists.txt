@@ -11,11 +11,11 @@ configLib(CMSISDSPCommon ${ROOT})
 configDsp(CMSISDSPCommon ${ROOT})
 
 if (CONFIGTABLE AND ALLFFT)
-    target_compile_definitions(CMSISDSPCommon PUBLIC ARM_ALL_FFT_TABLES) 
+    target_compile_definitions(CMSISDSPCommon PUBLIC ARM_ALL_FFT_TABLES)
 endif()
 
 if (CONFIGTABLE AND ALLFAST)
-    target_compile_definitions(CMSISDSPCommon PUBLIC ARM_ALL_FAST_TABLES) 
+    target_compile_definitions(CMSISDSPCommon PUBLIC ARM_ALL_FAST_TABLES)
 endif()
 
 include(fft)

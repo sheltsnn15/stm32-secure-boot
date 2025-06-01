@@ -20,4 +20,3 @@ target_include_directories(CMSISDSPBayes PUBLIC "${DSP}/Include")
 if ((NOT ARMAC5) AND (NOT DISABLEFLOAT16))
 target_sources(CMSISDSPBayes PRIVATE arm_gaussian_naive_bayes_predict_f16.c)
 endif()
-

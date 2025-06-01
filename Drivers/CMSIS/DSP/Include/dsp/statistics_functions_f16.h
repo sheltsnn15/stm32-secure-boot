@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _STATISTICS_FUNCTIONS_F16_H_
 #define _STATISTICS_FUNCTIONS_F16_H_
 
@@ -249,9 +249,9 @@ float16_t arm_kullback_leibler_f16(const float16_t * pSrcA
   @param[in]     pSrcB       points to the second input vector
   @param[in]     blockSize  number of samples in input vector
   @param[out]    pResult    mean square error
-  @return        none 
+  @return        none
 */
-  
+
 void arm_mse_f16(
   const float16_t * pSrcA,
   const float16_t * pSrcB,

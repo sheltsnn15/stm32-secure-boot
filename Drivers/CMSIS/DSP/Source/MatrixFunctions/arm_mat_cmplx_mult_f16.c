@@ -53,7 +53,7 @@
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) && defined(__CMSIS_GCC_H)
 #pragma GCC warning "Scalar version of arm_mat_cmplx_mult_f16 built. Helium version has build issues with gcc."
-#endif 
+#endif
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) &&  !defined(__CMSIS_GCC_H)
 
@@ -157,7 +157,7 @@ __STATIC_FORCEINLINE arm_status arm_mat_cmplx_mult_f16_3x3_mve(
         DONTCARE, DONTCARE
     };
 
-    
+
     /* enable predication to disable upper half complex vector element */
     mve_pred16_t p0 = vctp16q(MATRIX_DIM * CMPLX_DIM);
 
@@ -568,7 +568,7 @@ if ((pSrcA->numCols != pSrcB->numRows) ||
             mve_cmplx_sum_intra_vec_f16(acc1, &px[1 * CMPLX_DIM * numColsB + 0]);
             mve_cmplx_sum_intra_vec_f16(acc2, &px[2 * CMPLX_DIM * numColsB + 0]);
             mve_cmplx_sum_intra_vec_f16(acc3, &px[3 * CMPLX_DIM * numColsB + 0]);
-           
+
             px += CMPLX_DIM;
             /*
              * Decrement the column loop counter
@@ -627,7 +627,7 @@ if ((pSrcA->numCols != pSrcB->numRows) ||
             acc0 = vdupq_n_f16(0.0f16);
 
             pSrcA0Vec = (float16_t const *) pInA0;
-           
+
             vecOffs = vecColBOffs;
 
             /*
@@ -644,11 +644,11 @@ if ((pSrcA->numCols != pSrcB->numRows) ||
                  */
                 vecOffs = vaddq_n_u16(vecOffs, (uint16_t) (4*numColsB * CMPLX_DIM));
 
-                vecA = vld1q(pSrcA0Vec);  
+                vecA = vld1q(pSrcA0Vec);
                 pSrcA0Vec += 8;
                 acc0 = vcmlaq(acc0, vecA, vecB);
                 acc0 = vcmlaq_rot90(acc0, vecA, vecB);
-                
+
 
                 blkCnt--;
             }
@@ -664,7 +664,7 @@ if ((pSrcA->numCols != pSrcB->numRows) ||
                 f16x8_t vecB, vecA;
 
                 vecB = vldrhq_gather_shifted_offset_z(pInB, vecOffs, p0);
-               
+
                 vecA = vld1q(pSrcA0Vec);
                 acc0 = vcmlaq(acc0, vecA, vecB);
                 acc0 = vcmlaq_rot90(acc0, vecA, vecB);
@@ -673,7 +673,7 @@ if ((pSrcA->numCols != pSrcB->numRows) ||
 
             mve_cmplx_sum_intra_vec_f16(acc0, &px[0]);
 
-           
+
             px += CMPLX_DIM;
             /*
              * Decrement the column loop counter
@@ -931,5 +931,4 @@ arm_status arm_mat_cmplx_mult_f16(
   @} end of MatrixMult group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

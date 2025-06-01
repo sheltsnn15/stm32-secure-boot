@@ -60,8 +60,8 @@ void arm_mse_f32(
 {
     float32x4_t vecA, vecB;
     float32x4_t vecSum;
-    uint32_t blkCnt; 
-    float32_t sum = 0.0f;  
+    uint32_t blkCnt;
+    float32_t sum = 0.0f;
     vecSum = vdupq_n_f32(0.0f);
 
     /* Compute 4 outputs at a time */
@@ -70,7 +70,7 @@ void arm_mse_f32(
     {
         vecA = vld1q(pSrcA);
         pSrcA += 4;
-        
+
         vecB = vld1q(pSrcB);
         pSrcB += 4;
 
@@ -104,7 +104,7 @@ void arm_mse_f32(
 
 #endif
 
-#if defined(ARM_MATH_NEON) 
+#if defined(ARM_MATH_NEON)
 void arm_mse_f32(
     const float32_t * pSrcA,
     const float32_t * pSrcB,
@@ -114,13 +114,13 @@ void arm_mse_f32(
 {
     float32x4_t vecA, vecB;
     float32x4_t vecSum;
-    uint32_t blkCnt; 
+    uint32_t blkCnt;
     float32_t inA, inB;
-    float32_t sum = 0.0f;  
+    float32_t sum = 0.0f;
     vecSum = vdupq_n_f32(0.0f);
 #if !defined(__aarch64__)
-    f32x2_t tmp = vdup_n_f32(0.0f); 
-#endif 
+    f32x2_t tmp = vdup_n_f32(0.0f);
+#endif
 
     /* Compute 4 outputs at a time */
     blkCnt = (blockSize) >> 2;
@@ -128,7 +128,7 @@ void arm_mse_f32(
     {
         vecA = vld1q_f32(pSrcA);
         pSrcA += 4;
-        
+
         vecB = vld1q_f32(pSrcB);
         pSrcB += 4;
 
@@ -147,21 +147,21 @@ void arm_mse_f32(
     tmp = vpadd_f32(vget_low_f32(vecSum), vget_high_f32(vecSum));
     sum = vget_lane_f32(tmp, 0) + vget_lane_f32(tmp, 1);
 
-#endif 
+#endif
 
     blkCnt = (blockSize) & 3;
     while (blkCnt > 0U)
     {
         /* Calculate dot product and store result in a temporary buffer. */
-        inA = *pSrcA++; 
+        inA = *pSrcA++;
         inB = *pSrcB++;
         inA = inA - inB;
         sum += inA * inA;
-    
+
         /* Decrement loop counter */
         blkCnt--;
     }
-    
+
     /* Store result in destination buffer */
     *result = sum / blockSize;
 
@@ -194,22 +194,22 @@ void arm_mse_f32(
   while (blkCnt > 0U)
   {
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = inA - inB;
     sum += inA * inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = inA - inB;
     sum += inA * inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = inA - inB;
     sum += inA * inA;
 
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = inA - inB;
     sum += inA * inA;
@@ -218,7 +218,7 @@ void arm_mse_f32(
     blkCnt--;
   }
 
-  
+
   /* Loop unrolling: Compute remaining outputs */
   blkCnt = (blockSize) & 3;
 #else
@@ -227,7 +227,7 @@ void arm_mse_f32(
 #endif
   while (blkCnt > 0U)
   {
-    inA = *pSrcA++; 
+    inA = *pSrcA++;
     inB = *pSrcB++;
     inA = inA - inB;
     sum += inA * inA;

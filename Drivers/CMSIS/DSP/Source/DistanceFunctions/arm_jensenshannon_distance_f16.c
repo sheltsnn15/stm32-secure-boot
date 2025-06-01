@@ -151,7 +151,7 @@ float16_t arm_jensenshannon_distance_f16(const float16_t *pA,const float16_t *pB
     float16_t result;
     uint32_t i;
 
-    left = 0.0f16; 
+    left = 0.0f16;
     right = 0.0f16;
     for(i=0; i < blockSize; i++)
     {
@@ -173,5 +173,4 @@ float16_t arm_jensenshannon_distance_f16(const float16_t *pA,const float16_t *pB
  * @} end of JensenShannon group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

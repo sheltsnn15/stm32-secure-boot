@@ -174,7 +174,7 @@ static float32_t testOutput[TEST_LENGTH_SAMPLES];
 static float32_t firStateF32[2 * BLOCK_SIZE + NUM_TAPS - 1];
 #else
 static float32_t firStateF32[BLOCK_SIZE + NUM_TAPS - 1];
-#endif 
+#endif
 
 /* ----------------------------------------------------------------------
 ** FIR Coefficients buffer generated using fir1() MATLAB function.
@@ -240,7 +240,7 @@ int32_t main(void)
   snr = arm_snr_f32(&refOutput[0], &testOutput[0], TEST_LENGTH_SAMPLES);
 
   status = (snr < SNR_THRESHOLD_F32) ? ARM_MATH_TEST_FAILURE : ARM_MATH_SUCCESS;
-  
+
   if (status != ARM_MATH_SUCCESS)
   {
 #if defined (SEMIHOSTING)

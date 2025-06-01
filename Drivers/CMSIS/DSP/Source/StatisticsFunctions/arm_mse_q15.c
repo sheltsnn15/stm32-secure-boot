@@ -95,7 +95,7 @@ void arm_mse_q15(
         sum = vmlaldavaq_p(sum, vecSrcA, vecSrcA, p0);
     }
 
-    
+
 
     *pResult = (q15_t) __SSAT((q31_t) (sum / blockSize)>>13, 16);
 }

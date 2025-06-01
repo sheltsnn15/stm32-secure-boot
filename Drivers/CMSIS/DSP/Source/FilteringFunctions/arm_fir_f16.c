@@ -60,8 +60,8 @@
         }
 
 #define NB_TAPS 4
-__STATIC_INLINE void arm_fir_f16_1_4_mve(const arm_fir_instance_f16 * S, 
-    const float16_t * __restrict pSrc, 
+__STATIC_INLINE void arm_fir_f16_1_4_mve(const arm_fir_instance_f16 * S,
+    const float16_t * __restrict pSrc,
     float16_t * __restrict pDst, uint32_t blockSize)
 {
     float16_t      *pState = S->pState;     /* State pointer */
@@ -150,8 +150,8 @@ __STATIC_INLINE void arm_fir_f16_1_4_mve(const arm_fir_instance_f16 * S,
 #undef NB_TAPS
 
 #define NB_TAPS 8
-__STATIC_INLINE void arm_fir_f16_5_8_mve(const arm_fir_instance_f16 * S, 
-    const float16_t * __restrict pSrc, 
+__STATIC_INLINE void arm_fir_f16_5_8_mve(const arm_fir_instance_f16 * S,
+    const float16_t * __restrict pSrc,
     float16_t * __restrict pDst, uint32_t blockSize)
 {
     float16_t      *pState = S->pState;     /* State pointer */
@@ -239,9 +239,9 @@ __STATIC_INLINE void arm_fir_f16_5_8_mve(const arm_fir_instance_f16 * S,
 }
 #undef NB_TAPS
 
-void arm_fir_f16(const arm_fir_instance_f16 * S, 
-  const float16_t * pSrc, 
-  float16_t * pDst, 
+void arm_fir_f16(const arm_fir_instance_f16 * S,
+  const float16_t * pSrc,
+  float16_t * pDst,
   uint32_t blockSize)
 {
     float16_t *pRefStatePtr = S->pState + ROUND_UP(blockSize, 8);

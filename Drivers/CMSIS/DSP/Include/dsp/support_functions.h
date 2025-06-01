@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _SUPPORT_FUNCTIONS_H_
 #define _SUPPORT_FUNCTIONS_H_
 
@@ -189,7 +189,7 @@ extern "C"
 
 
 
-  
+
   /**
    * @brief Struct for specifying sorting algorithm
    */
@@ -223,11 +223,11 @@ extern "C"
   /**
    * @brief Instance structure for the sorting algorithms.
    */
-  typedef struct            
+  typedef struct
   {
     arm_sort_alg alg;        /**< Sorting algorithm selected */
     arm_sort_dir dir;        /**< Sorting order (direction)  */
-  } arm_sort_instance_f32;  
+  } arm_sort_instance_f32;
 
   /**
    * @param[in]  S          points to an instance of the sorting structure.
@@ -236,9 +236,9 @@ extern "C"
    * @param[in]  blockSize  number of samples to process.
    */
   void arm_sort_f32(
-    const arm_sort_instance_f32 * S, 
-          float32_t * pSrc, 
-          float32_t * pDst, 
+    const arm_sort_instance_f32 * S,
+          float32_t * pSrc,
+          float32_t * pDst,
           uint32_t blockSize);
 
   /**
@@ -247,18 +247,18 @@ extern "C"
    * @param[in]      dir          Sorting order.
    */
   void arm_sort_init_f32(
-    arm_sort_instance_f32 * S, 
-    arm_sort_alg alg, 
-    arm_sort_dir dir); 
+    arm_sort_instance_f32 * S,
+    arm_sort_alg alg,
+    arm_sort_dir dir);
 
   /**
    * @brief Instance structure for the sorting algorithms.
    */
-  typedef struct            
+  typedef struct
   {
     arm_sort_dir dir;        /**< Sorting order (direction)  */
     float32_t * buffer;      /**< Working buffer */
-  } arm_merge_sort_instance_f32;  
+  } arm_merge_sort_instance_f32;
 
   /**
    * @param[in]      S          points to an instance of the sorting structure.
@@ -282,8 +282,8 @@ extern "C"
     arm_sort_dir dir,
     float32_t * buffer);
 
- 
- 
+
+
   /**
    * @brief  Copies the elements of a floating-point vector.
    * @param[in]  pSrc       input pointer
@@ -295,8 +295,8 @@ extern "C"
         float32_t * pDst,
         uint32_t blockSize);
 
- 
- 
+
+
   /**
    * @brief  Copies the elements of a floating-point vector.
    * @param[in]  pSrc       input pointer

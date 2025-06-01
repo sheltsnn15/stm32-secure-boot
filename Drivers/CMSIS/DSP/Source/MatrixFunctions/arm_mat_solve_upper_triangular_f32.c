@@ -90,16 +90,16 @@ arm_status status;                             /* status of matrix inverse */
 
     f32x4_t vecA;
     f32x4_t vecX;
-    
+
     for(i=n-1; i >= 0 ; i--)
     {
       for(j=0; j+3 < cols; j +=4)
       {
             vecA = vld1q_f32(&pA[i * cols + j]);
-            
+
             for(k=n-1; k > i; k--)
             {
-                vecX = vld1q_f32(&pX[cols*k+j]);          
+                vecX = vld1q_f32(&pX[cols*k+j]);
                 vecA = vfmsq(vecA,vdupq_n_f32(pUT[n*i + k]),vecX);
             }
 
@@ -110,7 +110,7 @@ arm_status status;                             /* status of matrix inverse */
 
             invUT = 1.0f / pUT[n*i + i];
             vecA = vmulq(vecA,vdupq_n_f32(invUT));
-           
+
 
             vst1q(&pX[i*cols+j],vecA);
       }
@@ -122,7 +122,7 @@ arm_status status;                             /* status of matrix inverse */
             ut_row = &pUT[n*i];
 
             float32_t tmp=a_col[i * cols];
-            
+
             for(k=n-1; k > i; k--)
             {
                 tmp -= ut_row[k] * pX[cols*k+j];
@@ -141,7 +141,7 @@ arm_status status;                             /* status of matrix inverse */
 
   }
 
-  
+
   /* Return to application */
   return (status);
 }
@@ -187,16 +187,16 @@ arm_status status;                             /* status of matrix inverse */
 
     f32x4_t vecA;
     f32x4_t vecX;
-    
+
     for(i=n-1; i >= 0 ; i--)
     {
       for(j=0; j+3 < cols; j +=4)
       {
             vecA = vld1q_f32(&pA[i * cols + j]);
-            
+
             for(k=n-1; k > i; k--)
             {
-                vecX = vld1q_f32(&pX[cols*k+j]);          
+                vecX = vld1q_f32(&pX[cols*k+j]);
                 vecA = vfmsq_f32(vecA,vdupq_n_f32(pUT[n*i + k]),vecX);
             }
 
@@ -207,7 +207,7 @@ arm_status status;                             /* status of matrix inverse */
 
             invUT = 1.0f / pUT[n*i + i];
             vecA = vmulq_f32(vecA,vdupq_n_f32(invUT));
-           
+
 
             vst1q_f32(&pX[i*cols+j],vecA);
       }
@@ -219,7 +219,7 @@ arm_status status;                             /* status of matrix inverse */
             ut_row = &pUT[n*i];
 
             float32_t tmp=a_col[i * cols];
-            
+
             for(k=n-1; k > i; k--)
             {
                 tmp -= ut_row[k] * pX[cols*k+j];
@@ -238,7 +238,7 @@ arm_status status;                             /* status of matrix inverse */
 
   }
 
-  
+
   /* Return to application */
   return (status);
 }
@@ -307,7 +307,7 @@ arm_status status;                             /* status of matrix inverse */
 
   }
 
-  
+
   /* Return to application */
   return (status);
 }

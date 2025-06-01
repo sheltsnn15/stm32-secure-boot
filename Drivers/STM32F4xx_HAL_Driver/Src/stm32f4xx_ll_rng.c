@@ -108,4 +108,3 @@ ErrorStatus LL_RNG_DeInit(const RNG_TypeDef *RNGx)
   */
 
 #endif /* USE_FULL_LL_DRIVER */
-

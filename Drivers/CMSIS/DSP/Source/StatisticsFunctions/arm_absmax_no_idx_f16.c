@@ -72,7 +72,7 @@ void arm_absmax_no_idx_f16(
     blkCnt = blockSize >> 3;
     while (blkCnt > 0)
     {
-        vecSrc = vldrhq_f16(pSrcVec);  
+        vecSrc = vldrhq_f16(pSrcVec);
         pSrcVec += 8;
         /*
          * update per-lane max.
@@ -90,7 +90,7 @@ void arm_absmax_no_idx_f16(
     blkCnt = blockSize & 7;
     if (blkCnt > 0U)
     {
-        vecSrc = vldrhq_f16(pSrcVec);  
+        vecSrc = vldrhq_f16(pSrcVec);
         pSrcVec += 8;
         p0 = vctp16q(blkCnt);
         /*
@@ -224,5 +224,4 @@ void arm_absmax_no_idx_f16(
   @} end of AbsMax group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

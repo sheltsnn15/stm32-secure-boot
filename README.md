@@ -32,5 +32,6 @@ Implementation of a secure boot mechanism for STM32F407VET6 that verifies firmwa
 ## Building and Flashing
 
 1. Generate firmware hash:
+
 ```bash
 openssl dgst -sha256 -binary firmware.bin | dd of=firmware_with_hash.bin bs=1 seek=$(stat -c%s firmware.bin) conv=notrunc

@@ -617,7 +617,7 @@ arm_status arm_mat_mult_q15(
     return (status);
 }
 
-#else 
+#else
 arm_status arm_mat_mult_q15(
   const arm_matrix_instance_q15 * pSrcA,
   const arm_matrix_instance_q15 * pSrcB,

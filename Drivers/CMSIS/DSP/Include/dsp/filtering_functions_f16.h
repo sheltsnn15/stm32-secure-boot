@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _FILTERING_FUNCTIONS_F16_H_
 #define _FILTERING_FUNCTIONS_F16_H_
 
@@ -98,7 +98,7 @@ extern "C"
   {
       float16_t coeffs[12][8]; /**< Points to the array of modified coefficients.  The array is of length 32. There is one per stage */
   } arm_biquad_mod_coef_f16;
-#endif 
+#endif
 
   /**
    * @brief Processing function for the floating-point Biquad cascade filter.
@@ -117,8 +117,8 @@ extern "C"
   void arm_biquad_cascade_df1_mve_init_f16(
       arm_biquad_casd_df1_inst_f16 * S,
       uint8_t numStages,
-      const float16_t * pCoeffs, 
-      arm_biquad_mod_coef_f16 * pCoeffsMod, 
+      const float16_t * pCoeffs,
+      arm_biquad_mod_coef_f16 * pCoeffsMod,
       float16_t * pState);
 #endif
 
@@ -225,7 +225,7 @@ extern "C"
   @return        none
  */
 void arm_levinson_durbin_f16(const float16_t *phi,
-  float16_t *a, 
+  float16_t *a,
   float16_t *err,
   int nbCoefs);
 

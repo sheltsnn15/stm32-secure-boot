@@ -240,7 +240,7 @@ int32_t main(void)
   /* Compare the SNR with threshold to test whether the
      computed output is matched with the reference output values. */
   status = (snr <= SNR_THRESHOLD) ? ARM_MATH_TEST_FAILURE : ARM_MATH_SUCCESS;
-  
+
   if (status != ARM_MATH_SUCCESS)
   {
 #if defined (SEMIHOSTING)

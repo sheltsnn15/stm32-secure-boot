@@ -123,5 +123,4 @@ void arm_fill_f16(
   @} end of Fill group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

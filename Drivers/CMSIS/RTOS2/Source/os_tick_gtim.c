@@ -92,7 +92,7 @@ int32_t OS_Tick_Setup (uint32_t freq, IRQHandler_t handler) {
     }
     prio >>= 1;
   }
-  
+
   // Adjust configured priority to the number of implemented priority bits
   prio = (GTIM_IRQ_PRIORITY << bits) & 0xFFUL;
 

@@ -78,7 +78,7 @@ static void arm_small_blk_absmin_q7(
     blkCnt = blockSize >> 4;
     while (blkCnt > 0U)
     {
-        vecSrc = vld1q(pSrcVec); 
+        vecSrc = vld1q(pSrcVec);
         pSrcVec += 16;
         vecSrc = vabsq(vecSrc);
         /*
@@ -102,7 +102,7 @@ static void arm_small_blk_absmin_q7(
     blkCnt = blockSize & 0xF;
     if (blkCnt > 0U)
     {
-        vecSrc = vld1q(pSrcVec); 
+        vecSrc = vld1q(pSrcVec);
         pSrcVec += 16;
         vecSrc = vabsq(vecSrc);
 
@@ -272,7 +272,7 @@ void arm_absmin_q7(
                                                                                                             \
   /* Store the extrema value and it's index into destination pointers */                                    \
   *pResult = out;                                                                                           \
-  *pIndex = outIndex;  
+  *pIndex = outIndex;
 }
 #else
 void arm_absmin_q7(

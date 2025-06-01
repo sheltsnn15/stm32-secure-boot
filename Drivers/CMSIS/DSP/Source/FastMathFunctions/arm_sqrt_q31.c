@@ -46,14 +46,14 @@
                    - \ref ARM_MATH_SUCCESS        : input value is positive
                    - \ref ARM_MATH_ARGUMENT_ERROR : input value is negative; *pOut is set to 0
  */
-#define Q28QUARTER 0x20000000 
+#define Q28QUARTER 0x20000000
 
 arm_status arm_sqrt_q31(
   q31_t in,
   q31_t * pOut)
 {
   q31_t number, var1, signBits1 ,temp;
- 
+
   number = in;
 
   /* If the input is a positive number then compute the signBits. */
@@ -80,20 +80,20 @@ arm_status arm_sqrt_q31(
 
     temp = ((q63_t) var1 * var1) >> 28;
     temp = ((q63_t) number * temp) >> 31;
-    temp = 0x30000000 - temp; 
+    temp = 0x30000000 - temp;
     var1 = ((q63_t) var1 * temp) >> 29;
 
-    
+
     /* 2nd iteration */
     temp = ((q63_t) var1 * var1) >> 28;
     temp = ((q63_t) number * temp) >> 31;
-    temp = 0x30000000 - temp; 
+    temp = 0x30000000 - temp;
     var1 = ((q63_t) var1 * temp) >> 29;
 
     /* 3nd iteration */
     temp = ((q63_t) var1 * var1) >> 28;
     temp = ((q63_t) number * temp) >> 31;
-    temp = 0x30000000 - temp; 
+    temp = 0x30000000 - temp;
     var1 = ((q63_t) var1 * temp) >> 29;
 
     /* Multiply the inverse square root with the original value */

@@ -98,4 +98,3 @@
   /**
    * @} end of LinearInterpolate group
    */
-

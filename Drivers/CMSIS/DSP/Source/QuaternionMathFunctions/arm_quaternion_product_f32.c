@@ -67,8 +67,8 @@
 
 #include "arm_helium_utils.h"
 
-void arm_quaternion_product_f32(const float32_t *qa, 
-    const float32_t *qb, 
+void arm_quaternion_product_f32(const float32_t *qa,
+    const float32_t *qb,
     float32_t *qr,
     uint32_t nbQuaternions)
 {
@@ -127,8 +127,8 @@ void arm_quaternion_product_f32(const float32_t *qa,
 
 #else
 
-void arm_quaternion_product_f32(const float32_t *qa, 
-    const float32_t *qb, 
+void arm_quaternion_product_f32(const float32_t *qa,
+    const float32_t *qb,
     float32_t *qr,
     uint32_t nbQuaternions)
 {

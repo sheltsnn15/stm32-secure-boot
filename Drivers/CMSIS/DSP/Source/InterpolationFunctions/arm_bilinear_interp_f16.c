@@ -152,7 +152,7 @@
     ydiff = (_Float16)Y - (_Float16)yIndex;
 
     /* Calculation of bi-linear interpolated output */
-    out = (_Float16)b1 + (_Float16)b2 * (_Float16)xdiff + 
+    out = (_Float16)b1 + (_Float16)b2 * (_Float16)xdiff +
     (_Float16)b3 * (_Float16)ydiff + (_Float16)b4 * (_Float16)xdiff * (_Float16)ydiff;
 
     /* return to application */
@@ -164,5 +164,4 @@
    */
 
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

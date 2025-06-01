@@ -120,17 +120,17 @@ void arm_min_no_idx_f16(
    while (blockSize > 0U)
    {
        newVal = *pSrc++;
-   
+
        /* compare for the minimum value */
        if ((_Float16)minValue > (_Float16)newVal)
        {
            /* Update the minimum value and it's index */
            minValue = newVal;
        }
-   
+
        blockSize --;
    }
-    
+
    *pResult = minValue;
 }
 
@@ -140,5 +140,4 @@ void arm_min_no_idx_f16(
   @} end of Min group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

@@ -101,7 +101,7 @@ arm_status arm_mfcc_q15(
     q15_t *pTmp2=(q15_t*)pTmp;
 
     arm_status status = ARM_MATH_SUCCESS;
-    
+
     // q15
     arm_absmax_q15(pSrc,S->fftLen,&m,&index);
 
@@ -115,7 +115,7 @@ arm_status arm_mfcc_q15(
        {
           return(status);
        }
- 
+
        arm_scale_q15(pSrc,quotient,shift,pSrc,S->fftLen);
     }
 
@@ -124,7 +124,7 @@ arm_status arm_mfcc_q15(
     arm_mult_q15(pSrc,S->windowCoefs, pSrc, S->fftLen);
 
 
-    /* Compute spectrum magnitude 
+    /* Compute spectrum magnitude
     */
     fftShift = 31 - __CLZ(S->fftLen);
 #if defined(ARM_MFCC_CFFT_BASED)
@@ -132,7 +132,7 @@ arm_status arm_mfcc_q15(
        are only providing acceleration for CFFT.
        With ARM_MFCC_CFFT_BASED enabled, CFFT is used and the MFCC
        will be accelerated on those boards.
- 
+
        The default is to use RFFT
     */
     /* Convert from real to complex */
@@ -179,7 +179,7 @@ arm_status arm_mfcc_q15(
 
 
     // q5.26
-   
+
     logExponent = fftShift + 2 + SHIFT_MELFILTER_SATURATION_Q15;
     logExponent = logExponent * LOG2TOLOG_Q15;
 
@@ -188,7 +188,7 @@ arm_status arm_mfcc_q15(
     arm_offset_q31(pTmp,logExponent,pTmp,S->nbMelFilters);
     arm_shift_q31(pTmp,-19,pTmp,S->nbMelFilters);
     for(i=0; i<S->nbMelFilters; i++)
-    { 
+    {
       pSrc[i] = __SSAT((q15_t)pTmp[i],16);
     }
 

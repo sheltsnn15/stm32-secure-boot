@@ -50,7 +50,7 @@ float64_t arm_kullback_leibler_f64(const float64_t * pSrcA, const float64_t * pS
     const float64_t *pInA, *pInB;
     uint32_t blkCnt;
     float64_t accum, pA,pB;
- 
+
     pInA = pSrcA;
     pInB = pSrcB;
     blkCnt = blockSize;
@@ -63,7 +63,7 @@ float64_t arm_kullback_leibler_f64(const float64_t * pSrcA, const float64_t * pS
         pB = *pInB++;
 
         accum += pA * log(pB / pA);
-       
+
         blkCnt--;
     }
 

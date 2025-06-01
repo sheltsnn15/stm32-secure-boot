@@ -728,4 +728,3 @@ uint32_t HAL_SMBUS_GetError(SMBUS_HandleTypeDef *hsmbus);
 
 
 #endif /* __STM32F4xx_HAL_SMBUS_H */
-

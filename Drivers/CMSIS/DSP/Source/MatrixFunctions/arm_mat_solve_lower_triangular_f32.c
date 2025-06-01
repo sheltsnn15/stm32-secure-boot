@@ -77,7 +77,7 @@
           b2 c2   x2   a2
              c3   x3   a3
 
-    x3 = a3 / c3 
+    x3 = a3 / c3
     x2 = (a2 - c2 x3) / b2
 
     */
@@ -128,7 +128,7 @@
             lt_row = &pLT[n*i];
 
             float32_t tmp=a_col[i * cols];
-            
+
             for(k=0; k < i; k++)
             {
                 tmp -= lt_row[k] * pX[cols*k+j];
@@ -178,7 +178,7 @@
           b2 c2   x2   a2
              c3   x3   a3
 
-    x3 = a3 / c3 
+    x3 = a3 / c3
     x2 = (a2 - c2 x3) / b2
 
     */
@@ -229,7 +229,7 @@
             lt_row = &pLT[n*i];
 
             float32_t tmp=a_col[i * cols];
-            
+
             for(k=0; k < i; k++)
             {
                 tmp -= lt_row[k] * pX[cols*k+j];
@@ -277,7 +277,7 @@
           b2 c2   x2   a2
              c3   x3   a3
 
-    x3 = a3 / c3 
+    x3 = a3 / c3
     x2 = (a2 - c2 x3) / b2
 
     */
@@ -303,7 +303,7 @@
             float32_t tmp=a_col[i * cols];
 
             lt_row = &pLT[n*i];
-            
+
             for(k=0; k < i; k++)
             {
                 tmp -= lt_row[k] * pX[cols*k+j];

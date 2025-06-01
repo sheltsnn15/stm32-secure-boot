@@ -203,7 +203,7 @@ void arm_cmplx_mult_cmplx_f32(
 	/* Increment pointers */
         pSrcA += 8;
         pSrcB += 8;
-	
+
 	/* Re{C} = Re{A}*Re{B} - Im{A}*Im{B} */
         outCplx.val[0] = vmulq_f32(va.val[0], vb.val[0]);
         outCplx.val[0] = vmlsq_f32(outCplx.val[0], va.val[1], vb.val[1]);

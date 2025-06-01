@@ -191,7 +191,7 @@ arm_status arm_mat_inverse_f16(
              * Temporary variable to hold the pivot value
              */
             in = *pInT1;
-            
+
 
             /*
              * Check if the pivot element is zero
@@ -224,7 +224,7 @@ arm_status arm_mat_inverse_f16(
                         blkCnt = (numCols - l) >> 3;
                         while (blkCnt > 0U)
                         {
-                            
+
                             vecA = vldrhq_f16(pTmpA);
                             vecB = vldrhq_f16(pTmpB);
                             vstrhq_f16(pTmpB, vecA);
@@ -297,7 +297,7 @@ arm_status arm_mat_inverse_f16(
                          */
                         break;
                     }
-              
+
                 }
             }
 
@@ -348,7 +348,7 @@ arm_status arm_mat_inverse_f16(
             if (blkCnt > 0U)
             {
                 mve_pred16_t p0 = vctp16q(blkCnt);
-                
+
 
                 vecA = vldrhq_f16(pTmpA);
                 vecA = vecA * invIn;
@@ -887,5 +887,4 @@ arm_status arm_mat_inverse_f16(
   @} end of MatrixInv group
  */
 
-#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */ 
-
+#endif /* #if defined(ARM_FLOAT16_SUPPORTED) */

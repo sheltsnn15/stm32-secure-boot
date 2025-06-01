@@ -23,7 +23,7 @@
  * limitations under the License.
  */
 
- 
+
 #ifndef _COMPLEX_MATH_FUNCTIONS_H_
 #define _COMPLEX_MATH_FUNCTIONS_H_
 

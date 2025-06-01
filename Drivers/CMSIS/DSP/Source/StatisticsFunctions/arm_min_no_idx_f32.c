@@ -117,17 +117,17 @@ void arm_min_no_idx_f32(
    while (blockSize > 0U)
    {
        newVal = *pSrc++;
-   
+
        /* compare for the minimum value */
        if (minValue > newVal)
        {
            /* Update the minimum value and it's index */
            minValue = newVal;
        }
-   
+
        blockSize --;
    }
-    
+
    *pResult = minValue;
 }
 

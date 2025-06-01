@@ -169,4 +169,3 @@ __RAM_FUNC HAL_StatusTypeDef HAL_FLASHEx_DisableFlashSleepMode(void)
 /**
   * @}
   */
-
