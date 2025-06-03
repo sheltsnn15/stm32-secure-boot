@@ -52,6 +52,8 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
+void jump_to_application(uint32_t application_address);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -142,7 +144,7 @@ void SystemClock_Config(void) {
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK) {
+  if (HAL_RCC_ClockConfig(&RCStruct, FLASH_LATENCY_0) != HAL_OK) {
     Error_Handler();
   }
 }
@@ -215,6 +217,21 @@ static void MX_GPIO_Init(void) {
 }
 
 /* USER CODE BEGIN 4 */
+void jump_to_application(uint32_t application_address) {
+  typedef void (*pFunction)(void);
+  pFunction jump_to_app;
+
+  uint32_t jump_address = *(__IO uint32_t *)(application_address + 4);
+  jump_to_app = (pFunction)jump_address;
+
+  HAL_DeInit();      // Deinitialize HAL
+  SysTick->CTRL = 0; // Disable SysTick
+
+  // Set main stack pointer
+  __set_MSP(*(__IO uint32_t *)application_address);
+
+  jump_to_app(); // Jump to application
+}
 
 /* USER CODE END 4 */
 
@@ -247,3 +264,4 @@ void assert_failed(uint8_t *file, uint32_t line) {
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+C_ClkInit
