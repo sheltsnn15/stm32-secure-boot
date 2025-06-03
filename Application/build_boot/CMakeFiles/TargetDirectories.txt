@@ -1,0 +1,11 @@
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/CMakeFiles/SecureBoot_F407.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/CMakeFiles/binaries.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/CMakeFiles/flash.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/CMakeFiles/size.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/CMakeFiles/debug.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/CMakeFiles/clean_all.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/CMakeFiles/edit_cache.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/CMakeFiles/rebuild_cache.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/Secure_Boot_STM32F407VET6/build_boot/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
