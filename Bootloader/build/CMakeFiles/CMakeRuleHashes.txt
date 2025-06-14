@@ -1,0 +1,7 @@
+# Hashes of file build rules.
+a4ef3465d9e7b6c0143f602b0fd5fa87 CMakeFiles/binaries
+8d4ba5d5e60c77cdc595d79b26d1a2d0 CMakeFiles/clean_all
+21b6f2f8996144b50502bf6dc17ec966 CMakeFiles/debug
+328286376a522c50616fa362fc6914fc CMakeFiles/flash
+b13753ed748f5109745e20879e2ff4d6 CMakeFiles/size
+985de79ee01df07273289214f2b92200 SecureBoot_F407.hex
