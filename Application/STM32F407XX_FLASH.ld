@@ -51,20 +51,20 @@
 
 /* Entry Point */
 ENTRY(Reset_Handler)
-/* __app_start = ORIGIN(FLASH); */
 
 /* Highest address of the user mode stack */
 _estack = ORIGIN(RAM) + LENGTH(RAM);    /* end of RAM */
 /* Generate a link error if heap and stack don't fit into RAM */
 _Min_Heap_Size = 0x200;      /* required amount of heap  */
 _Min_Stack_Size = 0x400; /* required amount of stack */
+_app_hash_start = ORIGIN(FLASH) + LENGTH(FLASH) - 32; /* symbol for the hash location */
 
 /* Specify the memory areas */
 MEMORY
 {
 RAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 128K
 CCMRAM (xrw)      : ORIGIN = 0x10000000, LENGTH = 64K
-FLASH (rx) : ORIGIN = 0x08010000, LENGTH = 448K
+FLASH (rx)      : ORIGIN = 0x8010000, LENGTH = 448K /* = 0x70000 */
 }
 
 /* Define output sections */
@@ -75,7 +75,6 @@ SECTIONS
   {
     . = ALIGN(4);
     KEEP(*(.isr_vector)) /* Startup code */
-    PROVIDE(__vector_table = .); /*set VTOR register explicitly*/
     . = ALIGN(4);
   } >FLASH
 
@@ -94,8 +93,8 @@ SECTIONS
 
     . = ALIGN(4);
     _etext = .;        /* define a global symbols at end of code */
+    ASSERT(_etext <= _app_firmware_end, "ERROR: Firmware overflows into hash region!");
 
-    PROVIDE(__firmware_end__ = .);
   } >FLASH
 
   /* Constant data goes into FLASH */
@@ -225,6 +224,13 @@ SECTIONS
     libm.a ( * )
     libgcc.a ( * )
   }
+
+  _app_hash_start = 0x0807FFE0;
+  .app_hash _app_hash_start : /* last 32 bytes of app region */
+  {
+    KEEP(*(.app_hash))
+  } >FLASH
+  PROVIDE(_app_firmware_end = _app_hash_start);
 
 }
 

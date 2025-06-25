@@ -1482,6 +1482,8 @@ Discarded input sections
                 0x00000000      0x1f8 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
  .text.HAL_GPIO_ReadPin
                 0x00000000       0x30 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .text.HAL_GPIO_TogglePin
+                0x00000000       0x34 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
  .text.HAL_GPIO_LockPin
                 0x00000000       0x50 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
  .text.HAL_GPIO_EXTI_IRQHandler
@@ -2154,6 +2156,8 @@ Discarded input sections
                 0x00000000       0x50 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
  .text.HAL_GetTickFreq
                 0x00000000       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .text.HAL_Delay
+                0x00000000       0x48 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
  .text.HAL_SuspendTick
                 0x00000000       0x20 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
  .text.HAL_ResumeTick
@@ -2417,16 +2421,16 @@ LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 0x20020000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
                 0x00000200                        _Min_Heap_Size = 0x200
                 0x00000400                        _Min_Stack_Size = 0x400
+                0x0807ffe0                        _app_hash_start = ((ORIGIN (FLASH) + LENGTH (FLASH)) - 0x20)
 
 .isr_vector     0x08010000      0x188
                 0x08010000                        . = ALIGN (0x4)
  *(.isr_vector)
  .isr_vector    0x08010000      0x188 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
                 0x08010000                g_pfnVectors
-                [!provide]                        PROVIDE (__vector_table = .)
                 0x08010188                        . = ALIGN (0x4)
 
-.text           0x08010188     0x1f24
+.text           0x08010188     0x1e98
                 0x08010188                        . = ALIGN (0x4)
  *(.text)
  .text          0x08010188       0x40 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -2443,303 +2447,294 @@ LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .text.__libc_init_array
                 0x08010504       0x48 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
                 0x08010504                __libc_init_array
- .text.main     0x0801054c       0x40 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+ .text.main     0x0801054c       0x30 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
                 0x0801054c                main
  .text.SystemClock_Config
-                0x0801058c       0xd4 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
-                0x0801058c                SystemClock_Config
+                0x0801057c       0xd4 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+                0x0801057c                SystemClock_Config
  .text.MX_USART2_UART_Init
-                0x08010660       0x54 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+                0x08010650       0x54 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
  .text.MX_GPIO_Init
-                0x080106b4       0xbc CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+                0x080106a4       0xbc CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
  .text.Error_Handler
-                0x08010770        0xc CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
-                0x08010770                Error_Handler
+                0x08010760        0xc CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+                0x08010760                Error_Handler
  .text.NMI_Handler
-                0x0801077c        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x0801077c                NMI_Handler
+                0x0801076c        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x0801076c                NMI_Handler
  .text.HardFault_Handler
-                0x08010784        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08010784                HardFault_Handler
+                0x08010774        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08010774                HardFault_Handler
  .text.MemManage_Handler
-                0x0801078c        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x0801078c                MemManage_Handler
+                0x0801077c        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x0801077c                MemManage_Handler
  .text.BusFault_Handler
-                0x08010794        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08010794                BusFault_Handler
+                0x08010784        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08010784                BusFault_Handler
  .text.UsageFault_Handler
-                0x0801079c        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x0801079c                UsageFault_Handler
+                0x0801078c        0x8 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x0801078c                UsageFault_Handler
  .text.SVC_Handler
-                0x080107a4        0xe CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080107a4                SVC_Handler
+                0x08010794        0xe CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08010794                SVC_Handler
  .text.DebugMon_Handler
-                0x080107b2        0xe CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080107b2                DebugMon_Handler
+                0x080107a2        0xe CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x080107a2                DebugMon_Handler
  .text.PendSV_Handler
-                0x080107c0        0xe CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080107c0                PendSV_Handler
+                0x080107b0        0xe CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x080107b0                PendSV_Handler
  .text.SysTick_Handler
-                0x080107ce        0xc CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
-                0x080107ce                SysTick_Handler
- *fill*         0x080107da        0x2 
+                0x080107be        0xc CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+                0x080107be                SysTick_Handler
+ *fill*         0x080107ca        0x2 
  .text.HAL_MspInit
-                0x080107dc       0x50 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
-                0x080107dc                HAL_MspInit
+                0x080107cc       0x50 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+                0x080107cc                HAL_MspInit
  .text.HAL_UART_MspInit
-                0x0801082c       0x90 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
-                0x0801082c                HAL_UART_MspInit
+                0x0801081c       0x90 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+                0x0801081c                HAL_UART_MspInit
  .text.Reset_Handler
-                0x080108bc       0x50 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
-                0x080108bc                Reset_Handler
+                0x080108ac       0x50 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
+                0x080108ac                Reset_Handler
  .text.Default_Handler
-                0x0801090c        0x2 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
-                0x0801090c                RTC_Alarm_IRQHandler
-                0x0801090c                HASH_RNG_IRQHandler
-                0x0801090c                EXTI2_IRQHandler
-                0x0801090c                TIM8_CC_IRQHandler
-                0x0801090c                TIM1_CC_IRQHandler
-                0x0801090c                DMA2_Stream5_IRQHandler
-                0x0801090c                DMA1_Stream5_IRQHandler
-                0x0801090c                PVD_IRQHandler
-                0x0801090c                SDIO_IRQHandler
-                0x0801090c                TAMP_STAMP_IRQHandler
-                0x0801090c                CAN2_RX1_IRQHandler
-                0x0801090c                EXTI3_IRQHandler
-                0x0801090c                TIM8_TRG_COM_TIM14_IRQHandler
-                0x0801090c                TIM1_UP_TIM10_IRQHandler
-                0x0801090c                TIM8_UP_TIM13_IRQHandler
-                0x0801090c                I2C3_ER_IRQHandler
-                0x0801090c                EXTI0_IRQHandler
-                0x0801090c                I2C2_EV_IRQHandler
-                0x0801090c                DMA1_Stream2_IRQHandler
-                0x0801090c                CAN1_RX0_IRQHandler
-                0x0801090c                FPU_IRQHandler
-                0x0801090c                OTG_HS_WKUP_IRQHandler
-                0x0801090c                CAN2_SCE_IRQHandler
-                0x0801090c                DMA2_Stream2_IRQHandler
-                0x0801090c                SPI1_IRQHandler
-                0x0801090c                TIM6_DAC_IRQHandler
-                0x0801090c                TIM1_BRK_TIM9_IRQHandler
-                0x0801090c                DCMI_IRQHandler
-                0x0801090c                CAN2_RX0_IRQHandler
-                0x0801090c                DMA2_Stream3_IRQHandler
-                0x0801090c                USART6_IRQHandler
-                0x0801090c                USART3_IRQHandler
-                0x0801090c                CAN1_RX1_IRQHandler
-                0x0801090c                UART5_IRQHandler
-                0x0801090c                DMA2_Stream0_IRQHandler
-                0x0801090c                TIM4_IRQHandler
-                0x0801090c                I2C1_EV_IRQHandler
-                0x0801090c                DMA1_Stream6_IRQHandler
-                0x0801090c                DMA1_Stream1_IRQHandler
-                0x0801090c                UART4_IRQHandler
-                0x0801090c                TIM3_IRQHandler
-                0x0801090c                RCC_IRQHandler
-                0x0801090c                TIM8_BRK_TIM12_IRQHandler
-                0x0801090c                Default_Handler
-                0x0801090c                EXTI15_10_IRQHandler
-                0x0801090c                ADC_IRQHandler
-                0x0801090c                DMA1_Stream7_IRQHandler
-                0x0801090c                TIM7_IRQHandler
-                0x0801090c                CAN2_TX_IRQHandler
-                0x0801090c                TIM5_IRQHandler
-                0x0801090c                DMA2_Stream7_IRQHandler
-                0x0801090c                I2C3_EV_IRQHandler
-                0x0801090c                EXTI9_5_IRQHandler
-                0x0801090c                RTC_WKUP_IRQHandler
-                0x0801090c                ETH_WKUP_IRQHandler
-                0x0801090c                SPI2_IRQHandler
-                0x0801090c                OTG_HS_EP1_IN_IRQHandler
-                0x0801090c                DMA1_Stream0_IRQHandler
-                0x0801090c                CAN1_TX_IRQHandler
-                0x0801090c                EXTI4_IRQHandler
-                0x0801090c                FSMC_IRQHandler
-                0x0801090c                ETH_IRQHandler
-                0x0801090c                OTG_HS_EP1_OUT_IRQHandler
-                0x0801090c                WWDG_IRQHandler
-                0x0801090c                TIM2_IRQHandler
-                0x0801090c                OTG_FS_WKUP_IRQHandler
-                0x0801090c                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0801090c                OTG_HS_IRQHandler
-                0x0801090c                EXTI1_IRQHandler
-                0x0801090c                USART2_IRQHandler
-                0x0801090c                I2C2_ER_IRQHandler
-                0x0801090c                DMA2_Stream1_IRQHandler
-                0x0801090c                CAN1_SCE_IRQHandler
-                0x0801090c                FLASH_IRQHandler
-                0x0801090c                DMA2_Stream4_IRQHandler
-                0x0801090c                USART1_IRQHandler
-                0x0801090c                OTG_FS_IRQHandler
-                0x0801090c                SPI3_IRQHandler
-                0x0801090c                DMA1_Stream4_IRQHandler
-                0x0801090c                I2C1_ER_IRQHandler
-                0x0801090c                DMA2_Stream6_IRQHandler
-                0x0801090c                DMA1_Stream3_IRQHandler
- *fill*         0x0801090e        0x2 
+                0x080108fc        0x2 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
+                0x080108fc                RTC_Alarm_IRQHandler
+                0x080108fc                HASH_RNG_IRQHandler
+                0x080108fc                EXTI2_IRQHandler
+                0x080108fc                TIM8_CC_IRQHandler
+                0x080108fc                TIM1_CC_IRQHandler
+                0x080108fc                DMA2_Stream5_IRQHandler
+                0x080108fc                DMA1_Stream5_IRQHandler
+                0x080108fc                PVD_IRQHandler
+                0x080108fc                SDIO_IRQHandler
+                0x080108fc                TAMP_STAMP_IRQHandler
+                0x080108fc                CAN2_RX1_IRQHandler
+                0x080108fc                EXTI3_IRQHandler
+                0x080108fc                TIM8_TRG_COM_TIM14_IRQHandler
+                0x080108fc                TIM1_UP_TIM10_IRQHandler
+                0x080108fc                TIM8_UP_TIM13_IRQHandler
+                0x080108fc                I2C3_ER_IRQHandler
+                0x080108fc                EXTI0_IRQHandler
+                0x080108fc                I2C2_EV_IRQHandler
+                0x080108fc                DMA1_Stream2_IRQHandler
+                0x080108fc                CAN1_RX0_IRQHandler
+                0x080108fc                FPU_IRQHandler
+                0x080108fc                OTG_HS_WKUP_IRQHandler
+                0x080108fc                CAN2_SCE_IRQHandler
+                0x080108fc                DMA2_Stream2_IRQHandler
+                0x080108fc                SPI1_IRQHandler
+                0x080108fc                TIM6_DAC_IRQHandler
+                0x080108fc                TIM1_BRK_TIM9_IRQHandler
+                0x080108fc                DCMI_IRQHandler
+                0x080108fc                CAN2_RX0_IRQHandler
+                0x080108fc                DMA2_Stream3_IRQHandler
+                0x080108fc                USART6_IRQHandler
+                0x080108fc                USART3_IRQHandler
+                0x080108fc                CAN1_RX1_IRQHandler
+                0x080108fc                UART5_IRQHandler
+                0x080108fc                DMA2_Stream0_IRQHandler
+                0x080108fc                TIM4_IRQHandler
+                0x080108fc                I2C1_EV_IRQHandler
+                0x080108fc                DMA1_Stream6_IRQHandler
+                0x080108fc                DMA1_Stream1_IRQHandler
+                0x080108fc                UART4_IRQHandler
+                0x080108fc                TIM3_IRQHandler
+                0x080108fc                RCC_IRQHandler
+                0x080108fc                TIM8_BRK_TIM12_IRQHandler
+                0x080108fc                Default_Handler
+                0x080108fc                EXTI15_10_IRQHandler
+                0x080108fc                ADC_IRQHandler
+                0x080108fc                DMA1_Stream7_IRQHandler
+                0x080108fc                TIM7_IRQHandler
+                0x080108fc                CAN2_TX_IRQHandler
+                0x080108fc                TIM5_IRQHandler
+                0x080108fc                DMA2_Stream7_IRQHandler
+                0x080108fc                I2C3_EV_IRQHandler
+                0x080108fc                EXTI9_5_IRQHandler
+                0x080108fc                RTC_WKUP_IRQHandler
+                0x080108fc                ETH_WKUP_IRQHandler
+                0x080108fc                SPI2_IRQHandler
+                0x080108fc                OTG_HS_EP1_IN_IRQHandler
+                0x080108fc                DMA1_Stream0_IRQHandler
+                0x080108fc                CAN1_TX_IRQHandler
+                0x080108fc                EXTI4_IRQHandler
+                0x080108fc                FSMC_IRQHandler
+                0x080108fc                ETH_IRQHandler
+                0x080108fc                OTG_HS_EP1_OUT_IRQHandler
+                0x080108fc                WWDG_IRQHandler
+                0x080108fc                TIM2_IRQHandler
+                0x080108fc                OTG_FS_WKUP_IRQHandler
+                0x080108fc                TIM1_TRG_COM_TIM11_IRQHandler
+                0x080108fc                OTG_HS_IRQHandler
+                0x080108fc                EXTI1_IRQHandler
+                0x080108fc                USART2_IRQHandler
+                0x080108fc                I2C2_ER_IRQHandler
+                0x080108fc                DMA2_Stream1_IRQHandler
+                0x080108fc                CAN1_SCE_IRQHandler
+                0x080108fc                FLASH_IRQHandler
+                0x080108fc                DMA2_Stream4_IRQHandler
+                0x080108fc                USART1_IRQHandler
+                0x080108fc                OTG_FS_IRQHandler
+                0x080108fc                SPI3_IRQHandler
+                0x080108fc                DMA1_Stream4_IRQHandler
+                0x080108fc                I2C1_ER_IRQHandler
+                0x080108fc                DMA2_Stream6_IRQHandler
+                0x080108fc                DMA1_Stream3_IRQHandler
+ *fill*         0x080108fe        0x2 
  .text.SystemInit
-                0x08010910       0x24 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
-                0x08010910                SystemInit
+                0x08010900       0x24 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+                0x08010900                SystemInit
  .text.HAL_UART_Init
-                0x08010934       0xa0 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x08010934                HAL_UART_Init
+                0x08010924       0xa0 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08010924                HAL_UART_Init
  .text.HAL_UART_Transmit
-                0x080109d4      0x116 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x080109d4                HAL_UART_Transmit
+                0x080109c4      0x116 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x080109c4                HAL_UART_Transmit
  .text.UART_WaitOnFlagUntilTimeout
-                0x08010aea       0xb2 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08010ada       0xb2 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.UART_EndRxTransfer
-                0x08010b9c       0xc6 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- *fill*         0x08010c62        0x2 
+                0x08010b8c       0xc6 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ *fill*         0x08010c52        0x2 
  .text.UART_SetConfig
-                0x08010c64      0x4e8 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08010c54      0x4e8 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.HAL_RCC_OscConfig
-                0x0801114c      0x4f0 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x0801114c                HAL_RCC_OscConfig
+                0x0801113c      0x4f0 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x0801113c                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x0801163c      0x1cc cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x0801163c                HAL_RCC_ClockConfig
+                0x0801162c      0x1cc cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x0801162c                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x08011808      0x18c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08011808                HAL_RCC_GetSysClockFreq
+                0x080117f8      0x18c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080117f8                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_GetHCLKFreq
-                0x08011994       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08011994                HAL_RCC_GetHCLKFreq
+                0x08011984       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x08011984                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x080119ac       0x28 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x080119ac                HAL_RCC_GetPCLK1Freq
+                0x0801199c       0x28 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x0801199c                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x080119d4       0x28 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x080119d4                HAL_RCC_GetPCLK2Freq
+                0x080119c4       0x28 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080119c4                HAL_RCC_GetPCLK2Freq
  .text.HAL_GPIO_Init
-                0x080119fc      0x338 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x080119fc                HAL_GPIO_Init
+                0x080119ec      0x338 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x080119ec                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x08011d34       0x32 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x08011d34                HAL_GPIO_WritePin
- .text.HAL_GPIO_TogglePin
-                0x08011d66       0x34 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x08011d66                HAL_GPIO_TogglePin
- *fill*         0x08011d9a        0x2 
+                0x08011d24       0x32 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x08011d24                HAL_GPIO_WritePin
+ *fill*         0x08011d56        0x2 
  .text.__NVIC_SetPriorityGrouping
-                0x08011d9c       0x48 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08011d58       0x48 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.__NVIC_GetPriorityGrouping
-                0x08011de4       0x1c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08011da0       0x1c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.__NVIC_SetPriority
-                0x08011e00       0x54 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08011dbc       0x54 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.NVIC_EncodePriority
-                0x08011e54       0x66 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- *fill*         0x08011eba        0x2 
+                0x08011e10       0x66 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ *fill*         0x08011e76        0x2 
  .text.SysTick_Config
-                0x08011ebc       0x44 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08011e78       0x44 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08011f00       0x16 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08011f00                HAL_NVIC_SetPriorityGrouping
+                0x08011ebc       0x16 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08011ebc                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08011f16       0x38 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08011f16                HAL_NVIC_SetPriority
+                0x08011ed2       0x38 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08011ed2                HAL_NVIC_SetPriority
  .text.HAL_SYSTICK_Config
-                0x08011f4e       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08011f4e                HAL_SYSTICK_Config
- *fill*         0x08011f66        0x2 
+                0x08011f0a       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08011f0a                HAL_SYSTICK_Config
+ *fill*         0x08011f22        0x2 
  .text.HAL_Init
-                0x08011f68       0x44 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08011f68                HAL_Init
+                0x08011f24       0x44 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08011f24                HAL_Init
  .text.HAL_InitTick
-                0x08011fac       0x60 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08011fac                HAL_InitTick
+                0x08011f68       0x60 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08011f68                HAL_InitTick
  .text.HAL_IncTick
-                0x0801200c       0x28 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x0801200c                HAL_IncTick
+                0x08011fc8       0x28 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08011fc8                HAL_IncTick
  .text.HAL_GetTick
-                0x08012034       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08012034                HAL_GetTick
- .text.HAL_Delay
-                0x0801204c       0x48 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x0801204c                HAL_Delay
+                0x08011ff0       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08011ff0                HAL_GetTick
  *(.glue_7)
- .glue_7        0x08012094        0x0 linker stubs
+ .glue_7        0x08012008        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08012094        0x0 linker stubs
+ .glue_7t       0x08012008        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08012094        0x0 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08012008        0x0 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x08012094        0x4 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08012094                _init
- .init          0x08012098        0x8 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08012008        0x4 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08012008                _init
+ .init          0x0801200c        0x8 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080120a0        0x4 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080120a0                _fini
- .fini          0x080120a4        0x8 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080120ac                        . = ALIGN (0x4)
-                0x080120ac                        _etext = .
-                [!provide]                        PROVIDE (__firmware_end__ = .)
+ .fini          0x08012014        0x4 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08012014                _fini
+ .fini          0x08012018        0x8 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08012020                        . = ALIGN (0x4)
+                0x08012020                        _etext = .
+                0x00000001                        ASSERT ((_etext <= _app_firmware_end), ERROR: Firmware overflows into hash region!)
 
-.vfp11_veneer   0x080120ac        0x0
- .vfp11_veneer  0x080120ac        0x0 linker stubs
+.vfp11_veneer   0x08012020        0x0
+ .vfp11_veneer  0x08012020        0x0 linker stubs
 
-.v4_bx          0x080120ac        0x0
- .v4_bx         0x080120ac        0x0 linker stubs
+.v4_bx          0x08012020        0x0
+ .v4_bx         0x08012020        0x0 linker stubs
 
-.iplt           0x080120ac        0x0
- .iplt          0x080120ac        0x0 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08012020        0x0
+ .iplt          0x08012020        0x0 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080120ac       0x30
-                0x080120ac                        . = ALIGN (0x4)
+.rodata         0x08012020       0x30
+                0x08012020                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x080120ac       0x18 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+ .rodata        0x08012020       0x18 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
  *(.rodata*)
  .rodata.AHBPrescTable
-                0x080120c4       0x10 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
-                0x080120c4                AHBPrescTable
+                0x08012038       0x10 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+                0x08012038                AHBPrescTable
  .rodata.APBPrescTable
-                0x080120d4        0x8 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
-                0x080120d4                APBPrescTable
-                0x080120dc                        . = ALIGN (0x4)
+                0x08012048        0x8 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+                0x08012048                APBPrescTable
+                0x08012050                        . = ALIGN (0x4)
 
-.ARM.extab      0x080120dc        0x0
-                0x080120dc                        . = ALIGN (0x4)
+.ARM.extab      0x08012050        0x0
+                0x08012050                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080120dc                        . = ALIGN (0x4)
+                0x08012050                        . = ALIGN (0x4)
 
-.ARM            0x080120dc        0x8
-                0x080120dc                        . = ALIGN (0x4)
-                0x080120dc                        __exidx_start = .
+.ARM            0x08012050        0x8
+                0x08012050                        . = ALIGN (0x4)
+                0x08012050                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x080120dc        0x8 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x080120e4                        __exidx_end = .
-                0x080120e4                        . = ALIGN (0x4)
+ .ARM.exidx     0x08012050        0x8 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x08012058                        __exidx_end = .
+                0x08012058                        . = ALIGN (0x4)
 
-.preinit_array  0x080120e4        0x0
-                0x080120e4                        . = ALIGN (0x4)
-                0x080120e4                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08012058        0x0
+                0x08012058                        . = ALIGN (0x4)
+                0x08012058                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080120e4                        PROVIDE (__preinit_array_end = .)
-                0x080120e4                        . = ALIGN (0x4)
+                0x08012058                        PROVIDE (__preinit_array_end = .)
+                0x08012058                        . = ALIGN (0x4)
 
-.init_array     0x080120e4        0x4
-                0x080120e4                        . = ALIGN (0x4)
-                0x080120e4                        PROVIDE (__init_array_start = .)
+.init_array     0x08012058        0x4
+                0x08012058                        . = ALIGN (0x4)
+                0x08012058                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080120e4        0x4 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x080120e8                        PROVIDE (__init_array_end = .)
-                0x080120e8                        . = ALIGN (0x4)
+ .init_array    0x08012058        0x4 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0801205c                        PROVIDE (__init_array_end = .)
+                0x0801205c                        . = ALIGN (0x4)
 
-.fini_array     0x080120e8        0x4
-                0x080120e8                        . = ALIGN (0x4)
+.fini_array     0x0801205c        0x4
+                0x0801205c                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080120e8        0x4 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0801205c        0x4 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x080120ec                        . = ALIGN (0x4)
-                0x080120ec                        _sidata = LOADADDR (.data)
+                0x08012060                        . = ALIGN (0x4)
+                0x08012060                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x080120ec        0x0
- .rel.iplt      0x080120ec        0x0 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-
-.data           0x20000000        0xc load address 0x080120ec
+.data           0x20000000        0xc load address 0x08012060
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -2758,12 +2753,12 @@ LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 0x2000000c                        . = ALIGN (0x4)
  *fill*         0x20000009        0x3 
                 0x2000000c                        _edata = .
-                0x080120f8                        _siccmram = LOADADDR (.ccmram)
+                0x0801206c                        _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x2000000c        0x0 load address 0x080120f8
+.igot.plt       0x2000000c        0x0 load address 0x0801206c
  .igot.plt      0x2000000c        0x0 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x080120f8
+.ccmram         0x10000000        0x0 load address 0x0801206c
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)
@@ -2803,11 +2798,21 @@ LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  libc.a(*)
  libm.a(*)
  libgcc.a(*)
+                0x0807ffe0                        _app_hash_start = 0x807ffe0
+
+.app_hash       0x0807ffe0       0x20
+ *(.app_hash)
+ .app_hash      0x0807ffe0       0x20 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+                0x0807ffe0                app_hash
+                0x0807ffe0                        PROVIDE (_app_firmware_end = _app_hash_start)
 OUTPUT(SecureBoot_F407.elf elf32-littlearm)
 LOAD linker stubs
 LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a
 LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
 LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a
+
+.rel.dyn        0x08080000        0x0
+ .rel.iplt      0x08080000        0x0 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
 .ARM.attributes
                 0x00000000       0x30
@@ -2875,29 +2880,29 @@ LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .debug_frame   0x000017e0       0x2c /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
  .debug_frame   0x0000180c       0x34 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
 
-.debug_info     0x00000000     0x70ad
- .debug_info    0x00000000      0xbcb CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
- .debug_info    0x00000bcb      0x112 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_info    0x00000cdd      0x8e9 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_info    0x000015c6       0x30 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
- .debug_info    0x000015f6      0x512 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
- .debug_info    0x00001b08     0x2f4f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_info    0x00004a57      0x8c3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_info    0x0000531a      0x6c3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_info    0x000059dd      0xd8c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_info    0x00006769      0x944 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+.debug_info     0x00000000     0x70a8
+ .debug_info    0x00000000      0xbc6 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+ .debug_info    0x00000bc6      0x112 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_info    0x00000cd8      0x8e9 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_info    0x000015c1       0x30 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
+ .debug_info    0x000015f1      0x512 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+ .debug_info    0x00001b03     0x2f4f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_info    0x00004a52      0x8c3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_info    0x00005315      0x6c3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_info    0x000059d8      0xd8c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_info    0x00006764      0x944 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
 
-.debug_abbrev   0x00000000     0x126e
- .debug_abbrev  0x00000000      0x246 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
- .debug_abbrev  0x00000246       0x73 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_abbrev  0x000002b9      0x1ad CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_abbrev  0x00000466       0x24 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
- .debug_abbrev  0x0000048a      0x11a cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
- .debug_abbrev  0x000005a4      0x30e cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_abbrev  0x000008b2      0x2b7 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_abbrev  0x00000b69      0x1d4 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_abbrev  0x00000d3d      0x31d cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_abbrev  0x0000105a      0x214 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+.debug_abbrev   0x00000000     0x126f
+ .debug_abbrev  0x00000000      0x247 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+ .debug_abbrev  0x00000247       0x73 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_abbrev  0x000002ba      0x1ad CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_abbrev  0x00000467       0x24 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
+ .debug_abbrev  0x0000048b      0x11a cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+ .debug_abbrev  0x000005a5      0x30e cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_abbrev  0x000008b3      0x2b7 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_abbrev  0x00000b6a      0x1d4 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_abbrev  0x00000d3e      0x31d cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_abbrev  0x0000105b      0x214 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
 
 .debug_aranges  0x00000000      0x628
  .debug_aranges
@@ -2993,30 +2998,30 @@ LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .debug_macro   0x0001f9a6      0x1ba cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .debug_macro   0x0001fb60      0x21a cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
 
-.debug_line     0x00000000     0x759c
- .debug_line    0x00000000      0x819 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
- .debug_line    0x00000819      0x7db CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_line    0x00000ff4      0x779 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_line    0x0000176d       0x7a CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
- .debug_line    0x000017e7      0x7a2 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
- .debug_line    0x00001f89     0x2566 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_line    0x000044ef      0xe2b cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_line    0x0000531a      0xb76 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_line    0x00005e90      0xcee cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_line    0x00006b7e      0xa1e cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+.debug_line     0x00000000     0x7594
+ .debug_line    0x00000000      0x811 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+ .debug_line    0x00000811      0x7db CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_line    0x00000fec      0x779 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_line    0x00001765       0x7a CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
+ .debug_line    0x000017df      0x7a2 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+ .debug_line    0x00001f81     0x2566 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_line    0x000044e7      0xe2b cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_line    0x00005312      0xb76 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_line    0x00005e88      0xcee cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_line    0x00006b76      0xa1e cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
 
-.debug_str      0x00000000    0xbf136
- .debug_str     0x00000000    0xbf136 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
-                              0xbd5c9 (size before relaxing)
- .debug_str     0x000bf136    0xbce2d CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_str     0x000bf136    0xbd3c6 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_str     0x000bf136       0xfc CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
- .debug_str     0x000bf136    0xbcf1f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
- .debug_str     0x000bf136    0xbd934 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_str     0x000bf136    0xbd353 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_str     0x000bf136    0xbd09a cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_str     0x000bf136    0xbd81f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_str     0x000bf136    0xbdaa3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+.debug_str      0x00000000    0xbf13f
+ .debug_str     0x00000000    0xbf13f CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+                              0xbd5b5 (size before relaxing)
+ .debug_str     0x000bf13f    0xbce2d CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_str     0x000bf13f    0xbd3c6 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_str     0x000bf13f       0xfc CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
+ .debug_str     0x000bf13f    0xbcf1f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+ .debug_str     0x000bf13f    0xbd934 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_str     0x000bf13f    0xbd353 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_str     0x000bf13f    0xbd09a cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_str     0x000bf13f    0xbd81f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_str     0x000bf13f    0xbdaa3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
 
 .debug_line_str
                 0x00000000       0xe0

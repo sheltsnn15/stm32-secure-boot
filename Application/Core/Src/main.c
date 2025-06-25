@@ -47,6 +47,7 @@
 /* Private variables
  * ---------------------------------------------------------*/
 UART_HandleTypeDef huart2;
+const uint8_t __attribute__ ((section (".app_hash"))) app_hash[32] = { 0 };
 
 /* USER CODE BEGIN PV */
 
@@ -83,8 +84,7 @@ main (void)
      * Configuration--------------------------------------------------------*/
 
     /* Reset of all peripherals, Initializes the Flash interface and the
-     * Systick.
-     */
+     * Systick. */
     HAL_Init ();
 
     /* USER CODE BEGIN Init */
@@ -113,8 +113,6 @@ main (void)
     while (1)
     {
         /* USER CODE END WHILE */
-        HAL_GPIO_TogglePin (GPIOA, GPIO_PIN_6);
-        HAL_Delay (250);
 
         /* USER CODE BEGIN 3 */
     }
