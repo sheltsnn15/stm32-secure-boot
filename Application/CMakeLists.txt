@@ -49,7 +49,7 @@ add_custom_target(binaries ALL
 
 # ------------------ Flash & Debug Targets ------------------
 add_custom_target(flash
-    COMMAND STM32_Programmer_CLI -c port=SWD mode=UR -d ${CMAKE_PROJECT_NAME}.hex ${FLASH_ADDRESS}
+    COMMAND STM32_Programmer_CLI -c port=SWD sn=31030C1C7216303030303032 mode=UR -d ${CMAKE_PROJECT_NAME}.hex ${FLASH_ADDRESS}
     DEPENDS binaries
     COMMENT "Flashing firmware to STM32..."
 )

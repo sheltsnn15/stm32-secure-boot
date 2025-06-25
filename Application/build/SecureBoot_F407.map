@@ -2875,17 +2875,17 @@ LOAD /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .debug_frame   0x000017e0       0x2c /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
  .debug_frame   0x0000180c       0x34 /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
 
-.debug_info     0x00000000     0x70ac
- .debug_info    0x00000000      0xbca CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
- .debug_info    0x00000bca      0x112 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_info    0x00000cdc      0x8e9 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_info    0x000015c5       0x30 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
- .debug_info    0x000015f5      0x512 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
- .debug_info    0x00001b07     0x2f4f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_info    0x00004a56      0x8c3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_info    0x00005319      0x6c3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_info    0x000059dc      0xd8c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_info    0x00006768      0x944 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+.debug_info     0x00000000     0x70ad
+ .debug_info    0x00000000      0xbcb CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
+ .debug_info    0x00000bcb      0x112 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_info    0x00000cdd      0x8e9 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_info    0x000015c6       0x30 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
+ .debug_info    0x000015f6      0x512 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+ .debug_info    0x00001b08     0x2f4f cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_info    0x00004a57      0x8c3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_info    0x0000531a      0x6c3 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_info    0x000059dd      0xd8c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_info    0x00006769      0x944 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
 
 .debug_abbrev   0x00000000     0x126e
  .debug_abbrev  0x00000000      0x246 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj

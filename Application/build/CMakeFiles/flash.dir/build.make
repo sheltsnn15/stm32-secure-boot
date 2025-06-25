@@ -68,7 +68,7 @@ include CMakeFiles/flash.dir/progress.make
 
 CMakeFiles/flash:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Flashing firmware to STM32..."
-	STM32_Programmer_CLI -c port=SWD mode=UR -d SecureBoot_F407.hex 0x08010000
+	STM32_Programmer_CLI -c port=SWD sn=31030C1C7216303030303032 mode=UR -d SecureBoot_F407.hex 0x08010000
 
 flash: CMakeFiles/flash
 flash: CMakeFiles/flash.dir/build.make
