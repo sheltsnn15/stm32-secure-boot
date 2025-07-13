@@ -6,5 +6,5 @@
 
 #IncludeRegexTransform: 
 
-/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/startup_stm32f407xx.s
+/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/startup_stm32f407xx.s
 

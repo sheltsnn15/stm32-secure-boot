@@ -43,13 +43,22 @@ add_custom_command(
     COMMENT "Generating .hex and .bin files"
 )
 
+find_program(PYTHON_EXECUTABLE python3)
+
+add_custom_command(
+    OUTPUT ${CMAKE_PROJECT_NAME}_signed.bin
+    COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/scripts/hasher.py
+    DEPENDS ${CMAKE_PROJECT_NAME}.bin
+    COMMENT "Hashing and signing firmware"
+)
+
 add_custom_target(binaries ALL
-    DEPENDS ${CMAKE_PROJECT_NAME}.hex ${CMAKE_PROJECT_NAME}.bin
+    DEPENDS ${CMAKE_PROJECT_NAME}.hex ${CMAKE_PROJECT_NAME}.bin ${CMAKE_PROJECT_NAME}_signed.bin
 )
 
 # ------------------ Flash & Debug Targets ------------------
 add_custom_target(flash
-    COMMAND STM32_Programmer_CLI -c port=SWD sn=31030C1C7216303030303032 mode=UR -d ${CMAKE_PROJECT_NAME}.hex ${FLASH_ADDRESS}
+    COMMAND STM32_Programmer_CLI -c port=SWD sn=31030C1C7216303030303032 mode=UR -d ${CMAKE_PROJECT_NAME}_signed.bin ${FLASH_ADDRESS}
     DEPENDS binaries
     COMMENT "Flashing firmware to STM32..."
 )

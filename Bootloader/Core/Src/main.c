@@ -24,6 +24,12 @@
 /* Private includes
  * ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "sha-256.h"
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_gpio.h"
+#include "uECC.h"
+#include <stdint.h>
+#include <string.h>
 
 /* USER CODE END Includes */
 
@@ -36,13 +42,20 @@
 /* Private define
  * ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define APP_ADDRESS 0x08010000U
+#define APP_SIZE 0x70000U
+#define HASH_SIZE 32U
+#define SIGNATURE_SIZE 64U
+#define RESERVED_SIZE (HASH_SIZE + SIGNATURE_SIZE)
+#define APP_HASH_END (APP_ADDRESS + APP_SIZE - RESERVED_SIZE)
 
-#define APP_ADDRESS 0x08010000
 /* USER CODE END PD */
 
 /* Private macro
  * -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+// extern const uint8_t ecdsa_pub_x[32];
+// extern const uint8_t ecdsa_pub_y[32];
 
 /* USER CODE END PM */
 
@@ -105,32 +118,84 @@ main (void)
     MX_GPIO_Init ();
     MX_USART2_UART_Init ();
     /* USER CODE BEGIN 2 */
-    HAL_GPIO_WritePin (GPIOA, GPIO_PIN_6,
-                       GPIO_PIN_RESET); // Turn ON LED A6 (active low)
-    HAL_Delay (500);
+    HAL_UART_Transmit (&huart2, (uint8_t *)"Bootloader mode\r\n", 17,
+                       HAL_MAX_DELAY);
 
-    if (HAL_GPIO_ReadPin (GPIOE, GPIO_PIN_4) == GPIO_PIN_SET)
+    // Allocate buffers
+    uint8_t computed_hash[HASH_SIZE];
+    uint8_t stored_hash[HASH_SIZE];
+    uint8_t stored_signature[SIGNATURE_SIZE];
+    uint8_t pubkey[64];
+
+    const uint8_t ecdsa_pub_x[32]
+        = { 0x47, 0x97, 0x03, 0x07, 0xc6, 0x05, 0xfe, 0xcf, 0x44, 0x20, 0x2a,
+            0x54, 0xa1, 0xe1, 0xd5, 0x9f, 0xa7, 0x8d, 0xe7, 0x4f, 0x5a, 0xd7,
+            0x8d, 0xee, 0xd8, 0xcf, 0x0d, 0xde, 0x06, 0x51, 0x8d, 0x78 };
+
+    const uint8_t ecdsa_pub_y[32]
+        = { 0xaf, 0x83, 0x37, 0x95, 0xb2, 0xdd, 0xb7, 0xf6, 0x3a, 0x60, 0xf8,
+            0xe0, 0xb5, 0xfc, 0x96, 0x8b, 0xd6, 0x80, 0x2e, 0x55, 0x41, 0x60,
+            0x2f, 0x49, 0x14, 0xbf, 0xcf, 0xb9, 0xa1, 0x70, 0x94, 0xe7 };
+
+    // Prepare public key (x || y)
+    memcpy (pubkey, ecdsa_pub_x, 32);
+    memcpy (pubkey + 32, ecdsa_pub_y, 32);
+
+    // Compute SHA-256 hash of app code region
+    struct Sha_256 ctx;
+    sha_256_init (&ctx, computed_hash);
+    sha_256_write (&ctx, (const uint8_t *)APP_ADDRESS,
+                   APP_HASH_END - APP_ADDRESS);
+    sha_256_close (&ctx);
+
+    // Load stored hash and signature
+    memcpy (stored_hash, (const uint8_t *)APP_HASH_END, HASH_SIZE);
+    memcpy (stored_signature, (const uint8_t *)(APP_HASH_END + HASH_SIZE),
+            SIGNATURE_SIZE);
+
+    for (int i = 0; i < SIGNATURE_SIZE; i++)
     {
-        // Button NOT pressed (pulled-up) → Jump to application
-        HAL_UART_Transmit (&huart2, (uint8_t *)"Jumping to app...\r\n", 19,
+        char msg[10];
+        sprintf (msg, "%02X ", stored_signature[i]);
+        HAL_UART_Transmit (&huart2, (uint8_t *)msg, strlen (msg),
                            HAL_MAX_DELAY);
-        HAL_GPIO_WritePin (GPIOA, GPIO_PIN_6, GPIO_PIN_SET); // LED off
+    }
+    HAL_UART_Transmit (&huart2, (uint8_t *)"\r\n", 2, HAL_MAX_DELAY);
+
+    // Compare hashes (integrity)
+    if (memcmp (computed_hash, stored_hash, HASH_SIZE) != 0)
+    {
+        HAL_UART_Transmit (&huart2, (uint8_t *)"Hash check failed\r\n", 19,
+                           HAL_MAX_DELAY);
+        goto fail;
+    }
+
+    // Verify signature (authenticity)
+    int result = uECC_verify (pubkey, computed_hash, HASH_SIZE,
+                              stored_signature, uECC_secp256r1 ());
+
+    if (result == 1)
+    {
+        HAL_UART_Transmit (&huart2, (uint8_t *)"Signature OK. Jumping...\r\n",
+                           26, HAL_MAX_DELAY);
         jump_to_application (APP_ADDRESS);
     }
     else
     {
-        // Stay in bootloader mode
-        HAL_UART_Transmit (&huart2, (uint8_t *)"Bootloader mode\r\n", 17,
-                           HAL_MAX_DELAY);
+        HAL_UART_Transmit (&huart2, (uint8_t *)"Signature check failed\r\n",
+                           24, HAL_MAX_DELAY);
     }
     /* USER CODE END 2 */
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
 
+fail:
     while (1)
     {
         /* USER CODE END WHILE */
+        HAL_GPIO_TogglePin (GPIOA, GPIO_PIN_SET);
+        HAL_Delay (500);
 
         /* USER CODE BEGIN 3 */
     }

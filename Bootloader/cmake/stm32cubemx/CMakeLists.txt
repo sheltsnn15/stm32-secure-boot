@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.22)
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
 # STM32CubeMX generated symbols (macros)
-set(MX_Defines_Syms 
-	USE_HAL_DRIVER 
-	STM32F407xx
+set(MX_Defines_Syms
+ USE_HAL_DRIVER
+ STM32F407xx
     $<$<CONFIG:Debug>:DEBUG>
 )
 
@@ -24,6 +24,7 @@ set(MX_Application_Src
     ${CMAKE_SOURCE_DIR}/Core/Src/stm32f4xx_hal_msp.c
     ${CMAKE_SOURCE_DIR}/Core/Src/sysmem.c
     ${CMAKE_SOURCE_DIR}/Core/Src/syscalls.c
+    ${CMAKE_SOURCE_DIR}/Core/Src/sha-256.c
     ${CMAKE_SOURCE_DIR}/startup_stm32f407xx.s
 )
 
@@ -47,6 +48,10 @@ set(STM32_Drivers_Src
 )
 
 # Drivers Midllewares
+# micro-ecc library sources
+set(MICRO_ECC_Src
+    ${CMAKE_SOURCE_DIR}/Middlewares/micro-ecc/uECC.c
+)
 
 
 
@@ -55,13 +60,19 @@ set(MX_LINK_DIRS
 
 )
 # Project static libraries
-set(MX_LINK_LIBS 
+set(MX_LINK_LIBS
     STM32_Drivers
-    
+
 )
+
+list(APPEND MX_Application_Src
+    ${MICRO_ECC_Src}
+)
+
 # Interface library for includes and symbols
 add_library(stm32cubemx INTERFACE)
-target_include_directories(stm32cubemx INTERFACE ${MX_Include_Dirs})
+target_include_directories(stm32cubemx INTERFACE ${MX_Include_Dirs}
+    ${CMAKE_SOURCE_DIR}/Middlewares/micro-ecc)
 target_compile_definitions(stm32cubemx INTERFACE ${MX_Defines_Syms})
 
 # Create STM32_Drivers static library

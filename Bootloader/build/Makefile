@@ -57,10 +57,10 @@ RM = /opt/st/stm32cubeclt_1.18.0/CMake/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader
+CMAKE_SOURCE_DIR = /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build
+CMAKE_BINARY_DIR = /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -231,6 +231,30 @@ Core/Src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SecureBoot_F407.dir/build.make CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.s
 .PHONY : Core/Src/main.c.s
 
+Core/Src/sha-256.obj: Core/Src/sha-256.c.obj
+.PHONY : Core/Src/sha-256.obj
+
+# target to build an object file
+Core/Src/sha-256.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SecureBoot_F407.dir/build.make CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj
+.PHONY : Core/Src/sha-256.c.obj
+
+Core/Src/sha-256.i: Core/Src/sha-256.c.i
+.PHONY : Core/Src/sha-256.i
+
+# target to preprocess a source file
+Core/Src/sha-256.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SecureBoot_F407.dir/build.make CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.i
+.PHONY : Core/Src/sha-256.c.i
+
+Core/Src/sha-256.s: Core/Src/sha-256.c.s
+.PHONY : Core/Src/sha-256.s
+
+# target to generate assembly for a file
+Core/Src/sha-256.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SecureBoot_F407.dir/build.make CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.s
+.PHONY : Core/Src/sha-256.c.s
+
 Core/Src/stm32f4xx_hal_msp.obj: Core/Src/stm32f4xx_hal_msp.c.obj
 .PHONY : Core/Src/stm32f4xx_hal_msp.obj
 
@@ -327,6 +351,30 @@ Core/Src/sysmem.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SecureBoot_F407.dir/build.make CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.s
 .PHONY : Core/Src/sysmem.c.s
 
+Middlewares/micro-ecc/uECC.obj: Middlewares/micro-ecc/uECC.c.obj
+.PHONY : Middlewares/micro-ecc/uECC.obj
+
+# target to build an object file
+Middlewares/micro-ecc/uECC.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SecureBoot_F407.dir/build.make CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj
+.PHONY : Middlewares/micro-ecc/uECC.c.obj
+
+Middlewares/micro-ecc/uECC.i: Middlewares/micro-ecc/uECC.c.i
+.PHONY : Middlewares/micro-ecc/uECC.i
+
+# target to preprocess a source file
+Middlewares/micro-ecc/uECC.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SecureBoot_F407.dir/build.make CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.i
+.PHONY : Middlewares/micro-ecc/uECC.c.i
+
+Middlewares/micro-ecc/uECC.s: Middlewares/micro-ecc/uECC.c.s
+.PHONY : Middlewares/micro-ecc/uECC.s
+
+# target to generate assembly for a file
+Middlewares/micro-ecc/uECC.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SecureBoot_F407.dir/build.make CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.s
+.PHONY : Middlewares/micro-ecc/uECC.c.s
+
 startup_stm32f407xx.obj: startup_stm32f407xx.s.obj
 .PHONY : startup_stm32f407xx.obj
 
@@ -353,6 +401,9 @@ help:
 	@echo "... Core/Src/main.obj"
 	@echo "... Core/Src/main.i"
 	@echo "... Core/Src/main.s"
+	@echo "... Core/Src/sha-256.obj"
+	@echo "... Core/Src/sha-256.i"
+	@echo "... Core/Src/sha-256.s"
 	@echo "... Core/Src/stm32f4xx_hal_msp.obj"
 	@echo "... Core/Src/stm32f4xx_hal_msp.i"
 	@echo "... Core/Src/stm32f4xx_hal_msp.s"
@@ -365,6 +416,9 @@ help:
 	@echo "... Core/Src/sysmem.obj"
 	@echo "... Core/Src/sysmem.i"
 	@echo "... Core/Src/sysmem.s"
+	@echo "... Middlewares/micro-ecc/uECC.obj"
+	@echo "... Middlewares/micro-ecc/uECC.i"
+	@echo "... Middlewares/micro-ecc/uECC.s"
 	@echo "... startup_stm32f407xx.obj"
 .PHONY : help
 

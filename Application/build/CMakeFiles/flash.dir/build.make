@@ -53,10 +53,10 @@ RM = /opt/st/stm32cubeclt_1.18.0/CMake/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application
+CMAKE_SOURCE_DIR = /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build
+CMAKE_BINARY_DIR = /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build
 
 # Utility rule file for flash.
 
@@ -67,8 +67,8 @@ include CMakeFiles/flash.dir/compiler_depend.make
 include CMakeFiles/flash.dir/progress.make
 
 CMakeFiles/flash:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Flashing firmware to STM32..."
-	STM32_Programmer_CLI -c port=SWD sn=31030C1C7216303030303032 mode=UR -d SecureBoot_F407.hex 0x08010000
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Flashing firmware to STM32..."
+	STM32_Programmer_CLI -c port=SWD sn=31030C1C7216303030303032 mode=UR -d SecureBoot_F407_signed.bin 0x08010000
 
 flash: CMakeFiles/flash
 flash: CMakeFiles/flash.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/flash.dir/clean:
 .PHONY : CMakeFiles/flash.dir/clean
 
 CMakeFiles/flash.dir/depend:
-	cd /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build/CMakeFiles/flash.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build/CMakeFiles/flash.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/flash.dir/depend
 

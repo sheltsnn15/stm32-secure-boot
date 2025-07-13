@@ -1,4 +1,4 @@
-# Install script for directory: /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/cmake/stm32cubemx
+# Install script for directory: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/cmake/stm32cubemx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

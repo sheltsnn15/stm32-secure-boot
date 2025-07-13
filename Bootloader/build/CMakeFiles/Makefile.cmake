@@ -7,12 +7,12 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/CMakeLists.txt"
+  "/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/CMakeLists.txt"
   "CMakeFiles/3.28.1/CMakeASMCompiler.cmake"
   "CMakeFiles/3.28.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.1/CMakeSystem.cmake"
-  "/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/cmake/gcc-arm-none-eabi.cmake"
-  "/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/cmake/stm32cubemx/CMakeLists.txt"
+  "/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/cmake/gcc-arm-none-eabi.cmake"
+  "/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/cmake/stm32cubemx/CMakeLists.txt"
   "/opt/st/stm32cubeclt_1.18.0/CMake/share/cmake-3.28/Modules/CMakeASMInformation.cmake"
   "/opt/st/stm32cubeclt_1.18.0/CMake/share/cmake-3.28/Modules/CMakeCInformation.cmake"
   "/opt/st/stm32cubeclt_1.18.0/CMake/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"

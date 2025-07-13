@@ -1,24 +1,49 @@
-# Build artifacts
+# General build artifacts
 *.o
 *.elf
 *.bin
 *.hex
 *.map
 *.lst
+*.d
+*.su
+*.mod.c
+*.dep
+*.a
 
-# IDE files
+# IDE & local editor files
 .vscode/
 .idea/
 *.workspace
+*.launch
+*.cproject
+*.project
+.settings/
+*.swp
+*.swo
 
-# STM32CubeIDE
+# STM32CubeIDE generated folders
 Debug/
 Release/
-*.launch
-.project
-.cproject
-.settings/
 
-# Dependencies
+# Python / scripts
+__pycache__/
+*.pyc
+
+# Dependencies / third-party
 **/mbedtls/
 **/CMSIS/
+
+# Security / keys
+ec_private.pem
+firmware.sig
+firmware.hash
+
+# CMake & generated
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+build/
+

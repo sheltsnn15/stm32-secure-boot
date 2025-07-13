@@ -53,10 +53,10 @@ RM = /opt/st/stm32cubeclt_1.18.0/CMake/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader
+CMAKE_SOURCE_DIR = /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build
+CMAKE_BINARY_DIR = /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SecureBoot_F407.dir/depend.make
@@ -70,87 +70,115 @@ include CMakeFiles/SecureBoot_F407.dir/progress.make
 include CMakeFiles/SecureBoot_F407.dir/flags.make
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj: CMakeFiles/SecureBoot_F407.dir/flags.make
-CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj: /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/main.c
+CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/main.c
 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj: CMakeFiles/SecureBoot_F407.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj -c /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj -c /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/main.c
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.i"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/main.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.i
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/main.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.i
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.s"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/main.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.s
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/main.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.s
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/SecureBoot_F407.dir/flags.make
-CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj: /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_it.c
+CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_it.c
 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/SecureBoot_F407.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj -c /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_it.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj -c /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_it.c
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.i"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_it.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.i
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_it.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.i
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.s"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_it.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.s
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_it.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.s
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/SecureBoot_F407.dir/flags.make
-CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj: /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_hal_msp.c
+CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_hal_msp.c
 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/SecureBoot_F407.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj -c /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_hal_msp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj -c /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_hal_msp.c
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.i"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_hal_msp.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.i
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_hal_msp.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.i
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.s"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_hal_msp.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.s
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/stm32f4xx_hal_msp.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.s
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj: CMakeFiles/SecureBoot_F407.dir/flags.make
-CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj: /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/sysmem.c
+CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/sysmem.c
 CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj: CMakeFiles/SecureBoot_F407.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj -c /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/sysmem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj -c /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/sysmem.c
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.i"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/sysmem.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.i
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/sysmem.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.i
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.s"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/sysmem.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.s
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/sysmem.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.s
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj: CMakeFiles/SecureBoot_F407.dir/flags.make
-CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj: /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/syscalls.c
+CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/syscalls.c
 CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj: CMakeFiles/SecureBoot_F407.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj -c /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/syscalls.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj -c /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/syscalls.c
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.i"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/syscalls.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.i
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/syscalls.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.i
 
 CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.s"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/syscalls.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.s
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/syscalls.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.s
+
+CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj: CMakeFiles/SecureBoot_F407.dir/flags.make
+CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/sha-256.c
+CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj: CMakeFiles/SecureBoot_F407.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj -c /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/sha-256.c
+
+CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.i"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/sha-256.c > CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.i
+
+CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.s"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/sha-256.c -o CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.s
 
 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj: CMakeFiles/SecureBoot_F407.dir/flags.make
-CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj: /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/startup_stm32f407xx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building ASM object CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj -c /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/startup_stm32f407xx.s
+CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/startup_stm32f407xx.s
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building ASM object CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj -c /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/startup_stm32f407xx.s
 
 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing ASM source to CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.i"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -E /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/startup_stm32f407xx.s > CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.i
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -E /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/startup_stm32f407xx.s > CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.i
 
 CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling ASM source to assembly CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.s"
-	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -S /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/startup_stm32f407xx.s -o CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.s
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -S /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/startup_stm32f407xx.s -o CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.s
+
+CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj: CMakeFiles/SecureBoot_F407.dir/flags.make
+CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj: /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Middlewares/micro-ecc/uECC.c
+CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj: CMakeFiles/SecureBoot_F407.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj -MF CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj.d -o CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj -c /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Middlewares/micro-ecc/uECC.c
+
+CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.i"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Middlewares/micro-ecc/uECC.c > CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.i
+
+CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.s"
+	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Middlewares/micro-ecc/uECC.c -o CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.s
 
 # Object files for target SecureBoot_F407
 SecureBoot_F407_OBJECTS = \
@@ -159,32 +187,36 @@ SecureBoot_F407_OBJECTS = \
 "CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj" \
 "CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj" \
 "CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj" \
-"CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj"
+"CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj" \
+"CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj" \
+"CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj"
 
 # External object files for target SecureBoot_F407
 SecureBoot_F407_EXTERNAL_OBJECTS = \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj" \
-"/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj" \
+"/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
 
 SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/Core/Src/main.c.obj
 SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_it.c.obj
 SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/Core/Src/stm32f4xx_hal_msp.c.obj
 SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/Core/Src/sysmem.c.obj
 SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj
+SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/Core/Src/sha-256.c.obj
 SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/startup_stm32f407xx.s.obj
+SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/Middlewares/micro-ecc/uECC.c.obj
 SecureBoot_F407.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
 SecureBoot_F407.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
 SecureBoot_F407.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
@@ -202,7 +234,7 @@ SecureBoot_F407.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Driver
 SecureBoot_F407.elf: cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
 SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/build.make
 SecureBoot_F407.elf: CMakeFiles/SecureBoot_F407.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable SecureBoot_F407.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable SecureBoot_F407.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SecureBoot_F407.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -214,6 +246,6 @@ CMakeFiles/SecureBoot_F407.dir/clean:
 .PHONY : CMakeFiles/SecureBoot_F407.dir/clean
 
 CMakeFiles/SecureBoot_F407.dir/depend:
-	cd /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/build/CMakeFiles/SecureBoot_F407.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/build/CMakeFiles/SecureBoot_F407.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/SecureBoot_F407.dir/depend
 

@@ -57,7 +57,8 @@ _estack = ORIGIN(RAM) + LENGTH(RAM);    /* end of RAM */
 /* Generate a link error if heap and stack don't fit into RAM */
 _Min_Heap_Size = 0x200;      /* required amount of heap  */
 _Min_Stack_Size = 0x400; /* required amount of stack */
-_app_hash_start = ORIGIN(FLASH) + LENGTH(FLASH) - 32; /* symbol for the hash location */
+_app_hash_start = ORIGIN(FLASH) + LENGTH(FLASH) - 96;
+_app_sig_start  = _app_hash_start + 32;
 
 /* Specify the memory areas */
 MEMORY
@@ -225,11 +226,16 @@ SECTIONS
     libgcc.a ( * )
   }
 
-  _app_hash_start = 0x0807FFE0;
-  .app_hash _app_hash_start : /* last 32 bytes of app region */
+  .app_hash _app_hash_start :
   {
     KEEP(*(.app_hash))
   } >FLASH
+
+  .app_sig _app_sig_start :
+  {
+    KEEP(*(.app_sig))
+  } >FLASH
+
   PROVIDE(_app_firmware_end = _app_hash_start);
 
 }

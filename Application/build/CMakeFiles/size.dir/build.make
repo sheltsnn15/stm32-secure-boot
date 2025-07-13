@@ -53,10 +53,10 @@ RM = /opt/st/stm32cubeclt_1.18.0/CMake/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application
+CMAKE_SOURCE_DIR = /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build
+CMAKE_BINARY_DIR = /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build
 
 # Utility rule file for size.
 
@@ -67,7 +67,7 @@ include CMakeFiles/size.dir/compiler_depend.make
 include CMakeFiles/size.dir/progress.make
 
 CMakeFiles/size: SecureBoot_F407.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Displaying firmware size"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Displaying firmware size"
 	/opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-size SecureBoot_F407.elf
 
 size: CMakeFiles/size
@@ -83,6 +83,6 @@ CMakeFiles/size.dir/clean:
 .PHONY : CMakeFiles/size.dir/clean
 
 CMakeFiles/size.dir/depend:
-	cd /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Application/build/CMakeFiles/size.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Application/build/CMakeFiles/size.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/size.dir/depend
 

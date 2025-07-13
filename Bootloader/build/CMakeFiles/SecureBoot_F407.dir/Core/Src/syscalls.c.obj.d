@@ -1,5 +1,5 @@
 CMakeFiles/SecureBoot_F407.dir/Core/Src/syscalls.c.obj: \
- /home/shelton/Documents/Project/SelfStudy/Embedded_Systems/Security/stm32-secure-boot/Bootloader/Core/Src/syscalls.c \
+ /home/shelton/Documents/Project/STMProjects/stm32-secure-boot/Bootloader/Core/Src/syscalls.c \
  /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/arm-none-eabi/include/errno.h \
  /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/arm-none-eabi/include/sys/errno.h \
  /opt/st/stm32cubeclt_1.18.0/GNU-tools-for-STM32/arm-none-eabi/include/sys/reent.h \
