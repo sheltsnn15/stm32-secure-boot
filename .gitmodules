@@ -1,0 +1,6 @@
+[submodule "Bootloader/Middlewares/Middlewares/micro-ecc"]
+	path = Bootloader/Middlewares/Middlewares/micro-ecc
+	url = https://github.com/kmackay/micro-ecc.git
+[submodule "Bootloader/Middlewares/micro-ecc"]
+	path = Bootloader/Middlewares/micro-ecc
+	url = https://github.com/kmackay/micro-ecc.git
